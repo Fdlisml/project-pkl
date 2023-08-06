@@ -89,7 +89,7 @@ if (!isset($user_id)) {
             <div class="cardBox">
                <div class="card">
                   <div>
-                     <div class="say">Good Morning, Fadli</div>
+                     <div class="say">Good Morning, Fadli Ismail</div>
                      <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
                      <div id="txt"></div>
                      <div class="left2">
