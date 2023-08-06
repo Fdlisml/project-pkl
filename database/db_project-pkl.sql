@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 02, 2023 at 09:06 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Aug 06, 2023 at 05:55 PM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -44,6 +44,7 @@ CREATE TABLE `tb_project` (
 CREATE TABLE `tb_user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -51,8 +52,10 @@ CREATE TABLE `tb_user` (
 -- Dumping data for table `tb_user`
 --
 
-INSERT INTO `tb_user` (`id`, `username`, `password`) VALUES
-(1, 'fadli', '123');
+INSERT INTO `tb_user` (`id`, `username`, `name`, `password`) VALUES
+(1, 'fadli', 'Fadli Ismail', '123'),
+(2, 'yusril', 'Yusril Nanditama', '123'),
+(3, 'alfian', 'Alfian Dwi Anggoro', '123');
 
 --
 -- Indexes for dumped tables
@@ -84,7 +87,7 @@ ALTER TABLE `tb_project`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
