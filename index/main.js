@@ -69,9 +69,9 @@ const today = new Date();
 const weekDays = [
   "Sun",
   "Mon",
-  "Tues",
+  "Tue",
   "Wed",
-  "Thurs",
+  "Thu",
   "Fri",
   "Sat"
 ];
@@ -79,13 +79,13 @@ const weekDays = [
 const allMonths = [
   "Jan",
   "Feb",
-  "March",
-  "April",
+  "Mar",
+  "Apr",
   "May",
   "Jun",
   "Jul",
   "Aug",
-  "Sept",
+  "Sep",
   "Oct",
   "Nov",
   "Dec"

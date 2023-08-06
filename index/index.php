@@ -93,9 +93,9 @@ if (!isset($user_id)) {
                             <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
                             <div id="txt"></div>
                             <div class="left2">
-                                <p id="day">Sunday</p>
-                                <p id="date">01</p>/
-                                <p id="month">January
+                                <p id="day"></p>
+                                <p id="date"></p>/
+                                <p id="month"></p>
                             </div>
                         </div>
 
