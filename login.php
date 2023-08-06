@@ -14,6 +14,7 @@ function login($username, $password, $conn)
    if ($user) {
       $_SESSION['user_id'] = $user['id'];
       $_SESSION['username'] = $user['username'];
+      $_SESSION['name'] = $user['name'];
       return true;
    } else {
       return false;

@@ -4,6 +4,7 @@ include 'config/database.php';
 session_start();
 
 $user_id = $_SESSION['user_id'];
+$name = $_SESSION['name'];
 
 if (!isset($user_id)) {
    header('location:login.php');
@@ -89,7 +90,7 @@ if (!isset($user_id)) {
             <div class="cardBox">
                <div class="card">
                   <div>
-                     <div class="say">Good Morning, Fadli Ismail</div>
+                     <div class="say">Good Morning, <?= $name?></div>
                      <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
                      <div id="txt"></div>
                      <div class="left2">
