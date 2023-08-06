@@ -1,5 +1,5 @@
 <?php
-include 'connection.php';
+include 'config/database.php';
 
 session_start();
 
@@ -25,7 +25,7 @@ if (isset($_POST['login'])) {
    $password = $_POST['password'];
 
    if (login($username, $password, $conn)) {
-      header('location:../index/index.php');
+      header('location:index.php');
       exit();
    } else {
       $error = '<script>alert("Username atau password salah!");</script>';
@@ -39,7 +39,7 @@ if (isset($_POST['login'])) {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="login.css">
+   <link rel="stylesheet" href="public/css/login.css">
 
    <title>Login Page</title>
 </head>
@@ -49,7 +49,7 @@ if (isset($_POST['login'])) {
    <div class="container">
       <div class="left">
          <div class="wadah-img">
-            <img src="../image/Two factor authentication-pana.png" alt="login">
+            <img src="public/image/Two factor authentication-pana.png" alt="login">
          </div>
       </div>
 
@@ -82,7 +82,7 @@ if (isset($_POST['login'])) {
 
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-   <script src="script.js"></script>
+   <script src="public/js/login.js"></script>
 </body>
 
 </html>
