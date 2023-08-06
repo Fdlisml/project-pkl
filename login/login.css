@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: poppins;
+    background-image: url(../image/bg1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .left{
+    /* background: rgba(255, 255, 255, 0.1); */
+    /* backdrop-filter: blur(10px); */
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    height: 455px;
+    display: flex;
+    align-items: center;
+}
+
+.left .wadah-img img{
+    width: 450px;
+}
+
+.right{
+    background-color: rgb(255, 255, 255);
+    height: 60vh;
+    padding: 5%;
+    width: 350px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px; 
+}
+
+.wadah{
+    margin: 20px 0;
+}
+
+.wadah p{
+    font-size: .6rem;
+    color: #323232;
+}
+
+.wadah h4{
+    font-size: 1.5rem;
+}
+
+form{
+    margin-top: 30px;
+    padding: 0 1%;
+}
+
+form label{
+    font-size: .9rem;
+}
+
+form input{
+    height: 30px;
+    width: 88%;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid #d4d1d1;
+    padding: 0 15px;
+}
+
+.btn input{
+    margin-top: 70px;
+    height: 45px;
+    width: 100%;
+    background-color: #1ea2ff;
+    border: 2px solid #fff;
+    font-weight: 800;
+    color: white;
+}
+
+.btn input:hover{
+    background-color: #45b0fc;
+}
+
+.btn input:active{
+    background-color: #2ba2f7b7;
+}
+
