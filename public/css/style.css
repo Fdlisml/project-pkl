@@ -226,6 +226,7 @@ body {
 
 /* ======================= Cards ====================== */
 .cardBox {
+   margin-top: -10px;
    position: relative;
    width: 100%;
    padding: 20px;
@@ -439,6 +440,7 @@ body {
 
 /* ================== Order Details List ============== */
 .details {
+   margin-top: -10px;
    position: relative;
    width: 100%;
    padding: 20px;
@@ -449,7 +451,6 @@ body {
 
 .details .recentOrders {
    position: relative;
-   display: grid;
    min-height: 500px;
    background: var(--white);
    padding: 20px;
@@ -481,11 +482,15 @@ body {
    width: 100%;
    border-collapse: collapse;
    margin-top: 10px;
+  
 }
+
 
 .details table thead td {
    font-weight: 600;
+   text-align: start;
 }
+
 
 .details .recentOrders table tr {
    color: var(--black1);
@@ -505,13 +510,6 @@ body {
    padding: 10px;
 }
 
-.details .recentOrders table tr td:last-child {
-   text-align: end;
-}
-
-.details .recentOrders table tr td:nth-child(2) {
-   text-align: end;
-}
 
 .details .recentOrders table tr td:nth-child(3) {
    text-align: center;
@@ -553,6 +551,8 @@ body {
    font-weight: 500;
 }
 
+
+/*form  */
 .recentCustomers {
    position: relative;
    display: grid;
@@ -563,45 +563,139 @@ body {
    border-radius: 20px;
 }
 
-.recentCustomers .imgBx {
-   position: relative;
-   width: 40px;
-   height: 40px;
-   border-radius: 50px;
-   overflow: hidden;
+.wadah-form {
+   padding: 1rem 3%;
+   background-size: cover;
+   border-radius: 30px;
+   font-weight: bold;
+   backdrop-filter: blur(10px);
 }
 
-.recentCustomers .imgBx img {
-   position: absolute;
-   top: 0;
-   left: 0;
+.wadah-form .up {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 3rem;
+   height: 5vh;
+}
+
+.wadah-form .up ion-icon {
+   display: flex;
+   align-items: center;
+   justify-content: start;
+   width: 30px;
+   height: 30px;
+   background-color: #ffffff;
+   border-radius: 100%;
+   color: #987fb6;
+}
+
+.wadah-form .up h1 {
+   display: flex;
+   font-size: 1rem;
+}
+
+.container-form {
+   box-shadow: 0px 0px 10px 1px #88888846;
+   border-radius: 10px;
+   padding: 20px 20px;
+   backdrop-filter: blur(5px);
+   background: url(../image/bg-form.svg);
+   background-size: cover;
+}
+
+.container-form p {
+   display: flex;
+   align-items: center;
+   font-size: 1.3;
+   gap: .6rem;
+}
+
+.container-form span{
+   font-size: 1.2rem;
+}
+
+hr {
    width: 100%;
-   height: 100%;
-   object-fit: cover;
+   margin: 10px auto;
+   height: 3px;
+   background-color: rgba(0, 0, 0, 0.5);
+   border: none;
 }
 
-.recentCustomers table tr td {
-   padding: 12px 10px;
+label {
+   font-size: 1rem;
 }
 
-.recentCustomers table tr td h4 {
+.center-form {
+   margin: 0 auto;
+}
+
+form input {
+   margin-top: 10px;
+   width: 100%;
+   height: 35px;
+   border-radius: 10px;
+   outline: 2px solid #191919;
+   border: none;
+   padding: 0 15px;
+   font-weight: bold;
+}
+
+form textarea{
+   width: 100%;
+   margin-top: 10px;
+   border: 2px solid #191919;
+   border-radius: 10px;
+   padding: 5px 15px;
+   color: black;
    font-size: 16px;
-   font-weight: 500;
-   line-height: 1.2rem;
 }
 
-.recentCustomers table tr td h4 span {
-   font-size: 14px;
-   color: var(--black2);
+form input::placeholder {
+   font-weight: 800;
+   font-size: .7rem;
 }
 
-.recentCustomers table tr:hover {
-   background: var(--blue);
-   color: var(--white);
+form .flex {
+   display: flex;
 }
 
-.recentCustomers table tr:hover td h4 span {
-   color: var(--white);
+form .flex input {
+   text-align: center;
+}
+
+.flex .left-flex input {
+   width: 80%;
+}
+
+.flex .right-flex input {
+   width: 80%;
+}
+
+form .flex input::placeholder {
+   font-size: 10px;
+}
+
+.btn-form {
+   margin-top: 30px;
+   display: flex;
+   justify-content: center;
+}
+
+.btn-form input {
+   background: url(../image/btn-bg.svg);
+   background-size: cover;
+   border: 2px solid var(--blue);
+   border-radius: 10px;
+   outline: none;
+   width: 100%;
+   font-weight: 800;
+   color: black;
+}
+
+.btn-form input:active {
+   background-color: #987fb68e;
 }
 
 /* ====================== Responsive Design ========================== */

@@ -74,13 +74,6 @@ if (!isset($user_id)) {
                   <ion-icon name="menu-outline"></ion-icon>
                </div>
 
-               <div class="search">
-                  <label>
-                     <input type="text" placeholder="Search here">
-                     <ion-icon name="search-outline"></ion-icon>
-                  </label>
-               </div>
-
                <div class="user">
                   <img src="public/image/customer01.jpg" alt="">
                </div>
@@ -90,7 +83,7 @@ if (!isset($user_id)) {
             <div class="cardBox">
                <div class="card">
                   <div>
-                     <div class="say">Good Morning, <?= $name?></div>
+                     <div class="say">Good Morning, <?= $name ?></div>
                      <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
                      <div id="txt"></div>
                      <div class="left2">
@@ -126,163 +119,78 @@ if (!isset($user_id)) {
             <div class="details">
                <div class="recentOrders">
                   <div class="cardHeader">
-                     <h2>Recent Orders</h2>
-                     <a href="#" class="btn">View All</a>
+                     <h2>Jobs Today</h2>
+                     <a href="#" class="btn">History Kerja</a>
                   </div>
 
                   <table>
                      <thead>
                         <tr>
-                           <td>Name</td>
-                           <td>Price</td>
-                           <td>Payment</td>
-                           <td>Status</td>
+                           <td>Name Project</td>
+                           <td>E=selling</td>                      
                         </tr>
                      </thead>
 
                      <tbody>
                         <tr>
-                           <td>Star Refrigerator</td>
-                           <td>$1200</td>
-                           <td>Paid</td>
-                           <td><span class="status delivered">Delivered</span></td>
+                           <td>tugas</td>
+                           <td>membuat aplikasi web e-commers</td>
                         </tr>
 
                         <tr>
-                           <td>Dell Laptop</td>
-                           <td>$110</td>
-                           <td>Due</td>
-                           <td><span class="status pending">Pending</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Apple Watch</td>
-                           <td>$1200</td>
-                           <td>Paid</td>
-                           <td><span class="status return">Return</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Addidas Shoes</td>
-                           <td>$620</td>
-                           <td>Due</td>
-                           <td><span class="status inProgress">In Progress</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Star Refrigerator</td>
-                           <td>$1200</td>
-                           <td>Paid</td>
-                           <td><span class="status delivered">Delivered</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Dell Laptop</td>
-                           <td>$110</td>
-                           <td>Due</td>
-                           <td><span class="status pending">Pending</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Apple Watch</td>
-                           <td>$1200</td>
-                           <td>Paid</td>
-                           <td><span class="status return">Return</span></td>
-                        </tr>
-
-                        <tr>
-                           <td>Addidas Shoes</td>
-                           <td>$620</td>
-                           <td>Due</td>
-                           <td><span class="status inProgress">In Progress</span></td>
+                           <td>sub tugas</td>
+                           <td>membuat navbar beserta Responsive</td>
                         </tr>
                      </tbody>
+
+                  
                   </table>
                </div>
 
                <!-- ================= New Customers ================ -->
                <div class="recentCustomers">
                   <div class="cardHeader">
-                     <h2>Recent Customers</h2>
+                     <h2>Job Report</h2>
                   </div>
 
-                  <table>
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer01.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                        </td>
-                     </tr>
+                  <div class="wadah-form">
+                     <div class="container-form">
+                        <p>
+                           <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
+                           
+                        </p>
+                        <hr>
 
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer02.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                        </td>
-                     </tr>
+                        <form action="" method="post">
+                           <div class="center-form">
+                              <label for="">Nama Laporan</label><br>
+                              <input type="text" name="id" placeholder="Enter a Report Name">
+                              <br>
+                              <br>
+                              <label for="">Laporan</label><br>
+                              <textarea name="" id="" cols="30" rows="5"></textarea>
+                              <br>
+                              <br>
+                              <label for="">Keluhan</label><br>
+                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea>
+                              <br>
+                              <br>
+                              <label for="">Progres</label><br>
+                              <input type="range">
+                           </div>
 
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer01.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer02.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer01.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer02.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer01.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>David <br> <span>Italy</span></h4>
-                        </td>
-                     </tr>
-
-                     <tr>
-                        <td width="60px">
-                           <div class="imgBx"><img src="public/image/customer02.jpg" alt=""></div>
-                        </td>
-                        <td>
-                           <h4>Amit <br> <span>India</span></h4>
-                        </td>
-                     </tr>
-                  </table>
+                           <div class="btn-form">
+                              <input type="submit" value="Input Data">
+                           </div>
+                     </div>
+                     </form>
+                  </div>
                </div>
+
             </div>
          </div>
       </div>
+   </div>
    </div>
 
    <!-- =========== Scripts =========  -->
