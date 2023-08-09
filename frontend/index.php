@@ -10,12 +10,12 @@ if (!isset($user_id)) {
    header('location:login.php');
 }
 
-// $data = file_get_contents('http://localhost/project-pkl(backend)/data_project.php');
+// $data = file_get_contents('http://localhost/project-pkl/backend/data_project.php');
 // $result = json_decode($data, true);
 
 // $result = $result['data_project'];
 
-$url = 'http://localhost/project-pkl(backend)/data_project.php';
+$url = 'http://localhost/project-pkl/backend/data_project.php';
 $data = file_get_contents($url);
 
 if ($data !== false) {
