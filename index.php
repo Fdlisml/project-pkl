@@ -9,6 +9,32 @@ $name = $_SESSION['name'];
 if (!isset($user_id)) {
    header('location:login.php');
 }
+
+// $data = file_get_contents('http://localhost/project-pkl(backend)/data_project.php');
+// $result = json_decode($data, true);
+
+// $result = $result['data_project'];
+
+$url = 'http://localhost/project-pkl(backend)/data_project.php';
+$data = file_get_contents($url);
+
+if ($data !== false) {
+   $result = json_decode($data, true);
+   if ($result !== null) {
+      if (array_key_exists('data_project', $result)) {
+         $data_project = $result['data_project'];
+      } else {
+         echo 'Key "data_project" tidak ditemukan dalam respons JSON.';
+      }
+   } else {
+      echo 'Gagal menguraikan data JSON.';
+   }
+} else {
+   echo 'Gagal mengambil konten dari URL.';
+}
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -124,26 +150,26 @@ if (!isset($user_id)) {
                   </div>
 
                   <table>
-                     <thead>
-                        <tr>
-                           <td>Name Project</td>
-                           <td>E=selling</td>                      
-                        </tr>
-                     </thead>
+                     <?php foreach ($data_project as $project) : ?>
+                        <tbody>
+                           <tr>
+                              <td>Name Project</td>
+                              <td><?= $project["nama_project"] ?></td>
+                           </tr>
+                        </tbody>
 
-                     <tbody>
-                        <tr>
-                           <td>tugas</td>
-                           <td>membuat aplikasi web e-commers</td>
-                        </tr>
+                        <tbody>
+                           <tr>
+                              <td>tugas</td>
+                              <td><?= $project["tugas"] ?></td>
+                           </tr>
 
-                        <tr>
-                           <td>sub tugas</td>
-                           <td>membuat navbar beserta Responsive</td>
-                        </tr>
-                     </tbody>
-
-                  
+                           <tr>
+                              <td>deskripsi</td>
+                              <td><?= $project["deskripsi"] ?></td>
+                           </tr>
+                        </tbody>
+                     <?php endforeach ?>
                   </table>
                </div>
 
@@ -157,22 +183,22 @@ if (!isset($user_id)) {
                      <div class="container-form">
                         <p>
                            <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
-                           
+
                         </p>
                         <hr>
 
-                        <form action="" method="post">
+                        <form action="http://localhost/project-pkl(backend)/laporan.php" method="post">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
-                              <input type="text" name="id" placeholder="Enter a Report Name">
+                              <input type="text" name="nama_laporan" placeholder="Enter a Report Name">
                               <br>
                               <br>
-                              <label for="">Laporan</label><br>
-                              <textarea name="" id="" cols="30" rows="5"></textarea>
+                              <label for="">Deskripsi Laporan</label><br>
+                              <textarea name="deskripsi" id="" cols="30" rows="5"></textarea>
                               <br>
                               <br>
-                              <label for="">Keluhan</label><br>
-                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea>
+                              <!-- <label for="">Keluhan</label><br>
+                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea> -->
                               <br>
                               <br>
                               <label for="">Progres</label><br>
@@ -180,6 +206,8 @@ if (!isset($user_id)) {
                            </div>
 
                            <div class="btn-form">
+                              <input type="hidden" name="id_tugas" value="1">
+                              <input type="hidden" name="id_user" value="<?= $user_id ?>">
                               <input type="submit" value="Input Data">
                            </div>
                      </div>
