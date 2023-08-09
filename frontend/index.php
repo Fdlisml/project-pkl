@@ -187,7 +187,7 @@ if ($data !== false) {
                         </p>
                         <hr>
 
-                        <form action="http://localhost/project-pkl(backend)/laporan.php" method="post">
+                        <form action="http://localhost/project-pkl/backend/create_laporan.php" method="post">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name">
