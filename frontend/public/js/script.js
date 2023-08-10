@@ -96,3 +96,10 @@ day.innerHTML = weekDays[today.getDay()];
 month.innerHTML = allMonths[today.getMonth()];
 year.innerHTML = today.getFullYear();
 // end tanggal
+
+
+// range
+
+function rangeSlide(value){
+   document.getElementById("rangeValue").innerHTML = value;
+}
