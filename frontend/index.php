@@ -57,14 +57,16 @@ if ($data !== false) {
             <li>
                <a href="#">
                   <span class="icon">
-                     <ion-icon name="earth"></ion-icon>
+                     <div class="logo-bg">
+                        <img src="public/image/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
+                     </div>
                   </span>
-                  <span class="title">Project-PKL</span>
+                  <span class="title">WorkAssigner</span>
                </a>
             </li>
 
             <li>
-               <a href="#">
+               <a href="index.php">
                   <span class="icon">
                      <ion-icon name="reader-outline"></ion-icon>
                   </span>
@@ -73,7 +75,7 @@ if ($data !== false) {
             </li>
 
             <li>
-               <a href="#">
+               <a href="hasil.php">
                   <span class="icon">
                      <ion-icon name="checkmark-done-outline"></ion-icon>
                   </span>
@@ -146,31 +148,32 @@ if ($data !== false) {
                <div class="recentOrders">
                   <div class="cardHeader">
                      <h2>Jobs Today</h2>
-                     <a href="#" class="btn">History Kerja</a>
+                     <a href="hasil.php" class="btn">History Kerja</a>
                   </div>
+                  <div class="wadah-table">
+                     <table>
+                        <?php foreach ($data_project as $project) : ?>
+                           <tbody>
+                              <tr>
+                                 <td>Name Project</td>
+                                 <td><?= $project["nama_project"] ?></td>
+                              </tr>
+                           </tbody>
 
-                  <table>
-                     <?php foreach ($data_project as $project) : ?>
-                        <tbody>
-                           <tr>
-                              <td>Name Project</td>
-                              <td><?= $project["nama_project"] ?></td>
-                           </tr>
-                        </tbody>
+                           <tbody>
+                              <tr>
+                                 <td>Tugas</td>
+                                 <td><?= $project["tugas"] ?></td>
+                              </tr>
 
-                        <tbody>
-                           <tr>
-                              <td>tugas</td>
-                              <td><?= $project["tugas"] ?></td>
-                           </tr>
-
-                           <tr>
-                              <td>deskripsi</td>
-                              <td><?= $project["deskripsi"] ?></td>
-                           </tr>
-                        </tbody>
-                     <?php endforeach ?>
-                  </table>
+                              <tr>
+                                 <td>Deskripsi</td>
+                                 <td><?= $project["deskripsi"] ?></td>
+                              </tr>
+                           </tbody>
+                        <?php endforeach ?>
+                     </table>
+                  </div>
                </div>
 
                <!-- ================= New Customers ================ -->
@@ -187,7 +190,7 @@ if ($data !== false) {
                         </p>
                         <hr>
 
-                        <form action="http://localhost/project-pkl(backend)/laporan.php" method="post">
+                        <form action="http://localhost/project-pkl/backend/laporan.php" method="post">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name">
@@ -197,12 +200,25 @@ if ($data !== false) {
                               <textarea name="deskripsi" id="" cols="30" rows="5"></textarea>
                               <br>
                               <br>
-                              <!-- <label for="">Keluhan</label><br>
-                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea> -->
+                              <label for="">Keluhan</label><br>
+                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea>
                               <br>
                               <br>
                               <label for="">Progres</label><br>
-                              <input type="range">
+                              <div class="range">
+                                 <!-- <div class="sliderValue">
+                                    <span id="rangeValue">100</span>
+                                 </div> -->
+                                 <span id="rangeValue">0</span>
+                                 <div class="field">
+                                    <div class="value left">
+                                       0</div>
+                                    <input type="range" min="0" max="100" value="100" steps="1" onmousemove="rangeSlide(this.value)">
+                                    <div class="value right">
+                                       100</div>
+                                 </div>
+                              </div>
+
                            </div>
 
                            <div class="btn-form">
@@ -210,23 +226,21 @@ if ($data !== false) {
                               <input type="hidden" name="id_user" value="<?= $user_id ?>">
                               <input type="submit" value="Input Data">
                            </div>
+                        </form>
                      </div>
-                     </form>
                   </div>
                </div>
-
             </div>
          </div>
       </div>
-   </div>
-   </div>
 
-   <!-- =========== Scripts =========  -->
-   <script src="public/js/script.js"></script>
 
-   <!-- ====== ionicons ======= -->
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+      <!-- =========== Scripts =========  -->
+      <script src="public/js/script.js"></script>
+
+      <!-- ====== ionicons ======= -->
+      <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+      <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>
