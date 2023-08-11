@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 09, 2023 at 09:55 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Aug 11, 2023 at 09:59 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,17 +31,19 @@ CREATE TABLE `tb_laporan` (
   `id` int(11) NOT NULL,
   `nama_laporan` varchar(255) NOT NULL,
   `deskripsi` text NOT NULL,
+  `keluhan` text NOT NULL,
+  `progres` int(3) NOT NULL,
   `tgl_laporan` date NOT NULL,
   `id_tugas` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_laporan`
 --
 
-INSERT INTO `tb_laporan` (`id`, `nama_laporan`, `deskripsi`, `tgl_laporan`, `id_tugas`, `id_user`) VALUES
-(1, 'Menyelesaikan tugas membuat navbar ', 'Berhasil membuat navbar pada aplikasi Lulu', '2023-08-08', 1, 1);
+INSERT INTO `tb_laporan` (`id`, `nama_laporan`, `deskripsi`, `keluhan`, `progres`, `tgl_laporan`, `id_tugas`, `id_user`) VALUES
+(1, 'Menyelesaikan tugas membuat navbar ', 'Berhasil membuat navbar pada aplikasi Lulu', 'Punya temen lelet dalam ngerjain frontend', 70, '2023-08-08', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,7 @@ CREATE TABLE `tb_project` (
   `deskripsi` text NOT NULL,
   `tgl_mulai` date NOT NULL,
   `tgl_selesai` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_project`
@@ -79,7 +81,7 @@ CREATE TABLE `tb_tugas` (
   `tgl_selesai` date NOT NULL,
   `id_project` int(11) NOT NULL,
   `id_user` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_tugas`
@@ -99,7 +101,7 @@ CREATE TABLE `tb_user` (
   `username` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `tb_user`

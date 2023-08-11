@@ -12,6 +12,8 @@ if($sql){
          'id' => $row['id'],
          'nama_laporan' => $row['nama_laporan'],
          'deskripsi' => $row['deskripsi'],
+         'keluhan' => $row['keluhan'],
+         'progres' => $row['progres'],
          'tgl_laporan' => $row['tgl_laporan'],
          'id_tugas' => $row['id_tugas'],
          'id_user' => $row['id_user']

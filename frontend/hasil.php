@@ -17,9 +17,9 @@ if ($data !== false) {
     $result = json_decode($data, true);
     if ($result !== null) {
        if (array_key_exists('data_laporan', $result)) {
-          $data_project = $result['data_laporan'];
+          $data_laporan = $result['data_laporan'];
        } else {
-          echo 'Key "data_project" tidak ditemukan dalam respons JSON.';
+          echo 'Key "data_laporan" tidak ditemukan dalam respons JSON.';
        }
     } else {
        echo 'Gagal menguraikan data JSON.';
@@ -147,33 +147,33 @@ if ($data !== false) {
                         </div>
 
                         <table>
-                            <?php foreach ($data_project as $project) : ?>
+                            <?php foreach ($data_laporan as $laporan) : ?>
                                 <tbody>
                                     <tr>
                                         <td>Name Laporan</td>
-                                        <td><?= $project["nama_laporan"] ?></td>
+                                        <td><?= $laporan["nama_laporan"] ?></td>
                                     </tr>
                                 </tbody>
 
                                 <tbody>
                                     <tr>
                                         <td>Deskripsi</td>
-                                        <td><?= $project["deskripsi"] ?></td>
+                                        <td><?= $laporan["deskripsi"] ?></td>
                                     </tr>
 
                                     <tr> 
                                         <td>Keluhan</td>
-                                        <td><?= $project["keluhan"] ?></td>
+                                        <td><?= $laporan["keluhan"] ?></td>
                                     </tr> 
 
                                     <tr>
                                         <td>Tanggal Laporan</td>
-                                        <td><?= $project["tgl_laporan"] ?></td>
+                                        <td><?= $laporan["tgl_laporan"] ?></td>
                                     </tr>
 
                                     <tr>
-                                        <td>Progres</td>
-                                        <td><?= $project["progres"] ?></td>
+                                        <td>Progress</td>
+                                        <td><?= $laporan["progres"] ?></td>
                                     </tr>
                                 </tbody>
                             <?php endforeach ?>
