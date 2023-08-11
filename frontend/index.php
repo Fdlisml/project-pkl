@@ -197,34 +197,33 @@ if ($data !== false) {
                               <br>
                               <br>
                               <label for="">Deskripsi Laporan</label><br>
-                              <textarea name="deskripsi" id="" cols="30" rows="5"></textarea>
+                              <textarea name="deskripsi" id="" cols="30" rows="5" placeholder="Masukan Laporan"></textarea>
                               <br>
                               <br>
                               <label for="">Keluhan</label><br>
-                              <textarea name="" id="" cols="30" rows="5" placeholder="masukan Keluhan"></textarea>
+                              <textarea name="" id="" cols="30" rows="5" placeholder="Masukan Keluhan"></textarea>
                               <br>
                               <br>
                               <label for="">Progres</label><br>
-                              <div class="range">
-                                 <!-- <div class="sliderValue">
-                                    <span id="rangeValue">100</span>
-                                 </div> -->
-                                 <span id="rangeValue">0</span>
-                                 <div class="field">
-                                    <div class="value left">
-                                       0</div>
-                                    <input type="range" min="0" max="100" value="100" steps="1" onmousemove="rangeSlide(this.value)">
-                                    <div class="value right">
-                                       100</div>
+                              <div class="field">
+                                 <div class="range-active">
+                                    <input class="range" type="range" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                                 </div>
+
+                                 <div class="value">
+                                    <span id="rangeValue">0</span>%
                                  </div>
                               </div>
-
                            </div>
-
                            <div class="btn-form">
                               <input type="hidden" name="id_tugas" value="1">
                               <input type="hidden" name="id_user" value="<?= $user_id ?>">
-                              <input type="submit" value="Input Data">
+                              <button class="learn-more">
+                                 <span class="circle" aria-hidden="true">
+                                    <span class="icon arrow"></span>
+                                 </span>
+                                 <span class="button-text">Learn More</span>
+                              </button>
                            </div>
                         </form>
                      </div>

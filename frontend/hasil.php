@@ -7,9 +7,30 @@ $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
 
 if (!isset($user_id)) {
-   header('location:login.php');
+    header('location:login.php');
 }
+
+$url = 'http://localhost/project-pkl/backend/data_laporan.php';
+$data = file_get_contents($url);
+
+if ($data !== false) {
+    $result = json_decode($data, true);
+    if ($result !== null) {
+       if (array_key_exists('data_laporan', $result)) {
+          $data_project = $result['data_laporan'];
+       } else {
+          echo 'Key "data_project" tidak ditemukan dalam respons JSON.';
+       }
+    } else {
+       echo 'Gagal menguraikan data JSON.';
+    }
+ } else {
+    echo 'Gagal mengambil konten dari URL.';
+ }
+ 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -129,20 +150,30 @@ if (!isset($user_id)) {
                             <?php foreach ($data_project as $project) : ?>
                                 <tbody>
                                     <tr>
-                                        <td>Name Project</td>
-                                        <td><?= $project["nama_project"] ?></td>
+                                        <td>Name Laporan</td>
+                                        <td><?= $project["nama_laporan"] ?></td>
                                     </tr>
                                 </tbody>
 
                                 <tbody>
                                     <tr>
-                                        <td>tugas</td>
-                                        <td><?= $project["tugas"] ?></td>
+                                        <td>Deskripsi</td>
+                                        <td><?= $project["deskripsi"] ?></td>
+                                    </tr>
+
+                                    <tr> 
+                                        <td>Keluhan</td>
+                                        <td><?= $project["keluhan"] ?></td>
+                                    </tr> 
+
+                                    <tr>
+                                        <td>Tanggal Laporan</td>
+                                        <td><?= $project["tgl_laporan"] ?></td>
                                     </tr>
 
                                     <tr>
-                                        <td>deskripsi</td>
-                                        <td><?= $project["deskripsi"] ?></td>
+                                        <td>Progres</td>
+                                        <td><?= $project["progres"] ?></td>
                                     </tr>
                                 </tbody>
                             <?php endforeach ?>
@@ -156,5 +187,6 @@ if (!isset($user_id)) {
     <script src="public/js/script.js"></script>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </html>
