@@ -16,18 +16,18 @@ $data = file_get_contents($url);
 if ($data !== false) {
     $result = json_decode($data, true);
     if ($result !== null) {
-       if (array_key_exists('data_laporan', $result)) {
-          $data_laporan = $result['data_laporan'];
-       } else {
-          echo 'Key "data_laporan" tidak ditemukan dalam respons JSON.';
-       }
+        if (array_key_exists('data_laporan', $result)) {
+            $data_laporan = $result['data_laporan'];
+        } else {
+            echo 'Key "data_laporan" tidak ditemukan dalam respons JSON.';
+        }
     } else {
-       echo 'Gagal menguraikan data JSON.';
+        echo 'Gagal menguraikan data JSON.';
     }
- } else {
+} else {
     echo 'Gagal mengambil konten dari URL.';
- }
- 
+}
+
 ?>
 
 
@@ -143,41 +143,43 @@ if ($data !== false) {
                     <div class="recentOrders">
                         <div class="cardHeader">
                             <h2>Jobs Today</h2>
-                            <a href="#" class="btn">History Kerja</a>
+                            <a href="index.php" class="btn">Pekerjaan</a>
                         </div>
 
-                        <table>
-                            <?php foreach ($data_laporan as $laporan) : ?>
-                                <tbody>
-                                    <tr>
-                                        <td>Name Laporan</td>
-                                        <td><?= $laporan["nama_laporan"] ?></td>
-                                    </tr>
-                                </tbody>
+                        <div class="wadah-table">
+                            <table>
+                                <?php foreach ($data_laporan as $laporan) : ?>
+                                    <tbody>
+                                        <tr>
+                                            <td>Name Laporan</td>
+                                            <td><?= $laporan["nama_laporan"] ?></td>
+                                        </tr>
+                                    </tbody>
 
-                                <tbody>
-                                    <tr>
-                                        <td>Deskripsi</td>
-                                        <td><?= $laporan["deskripsi"] ?></td>
-                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <td>Deskripsi</td>
+                                            <td><?= $laporan["deskripsi"] ?></td>
+                                        </tr>
 
-                                    <tr> 
-                                        <td>Keluhan</td>
-                                        <td><?= $laporan["keluhan"] ?></td>
-                                    </tr> 
+                                        <tr>
+                                            <td>Keluhan</td>
+                                            <td><?= $laporan["keluhan"] ?></td>
+                                        </tr>
 
-                                    <tr>
-                                        <td>Tanggal Laporan</td>
-                                        <td><?= $laporan["tgl_laporan"] ?></td>
-                                    </tr>
+                                        <tr>
+                                            <td>Progress</td>
+                                            <td><?= $laporan["progres"] ?>%</td>
+                                        </tr>
 
-                                    <tr>
-                                        <td>Progress</td>
-                                        <td><?= $laporan["progres"] ?></td>
-                                    </tr>
-                                </tbody>
-                            <?php endforeach ?>
-                        </table>
+                                        <tr>
+                                            <td>Tanggal Laporan</td>
+                                            <td><?= $laporan["tgl_laporan"] ?></td>
+                                        </tr>   
+                                    </tbody>
+                                <?php endforeach ?>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
