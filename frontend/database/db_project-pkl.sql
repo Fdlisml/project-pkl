@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 11, 2023 at 09:59 AM
+-- Generation Time: Aug 12, 2023 at 09:37 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -43,7 +43,8 @@ CREATE TABLE `tb_laporan` (
 --
 
 INSERT INTO `tb_laporan` (`id`, `nama_laporan`, `deskripsi`, `keluhan`, `progres`, `tgl_laporan`, `id_tugas`, `id_user`) VALUES
-(1, 'Menyelesaikan tugas membuat navbar ', 'Berhasil membuat navbar pada aplikasi Lulu', 'Punya temen lelet dalam ngerjain frontend', 70, '2023-08-08', 1, 1);
+(1, 'Menyelesaikan tugas membuat navbar ', 'Berhasil membuat navbar pada aplikasi Lulu', 'Punya temen lelet dalam ngerjain frontend', 70, '2023-08-08', 1, 1),
+(2, 'Menyelesaikan tugas membuat tampilan  dashboard user', 'Berhasil membuat tampilan dashboard user pada aplikasi Lulu', 'Internet slow', 100, '2023-08-12', 5, 1);
 
 -- --------------------------------------------------------
 
@@ -88,7 +89,8 @@ CREATE TABLE `tb_tugas` (
 --
 
 INSERT INTO `tb_tugas` (`id`, `nama_tugas`, `deskripsi`, `tgl_mulai`, `tgl_selesai`, `id_project`, `id_user`) VALUES
-(1, 'Membuat tampilan login ', 'Buatlah tampilan login sesuai dengan UI/UX yang sudah di berikan.', '2023-08-08', '2023-08-10', 1, 2);
+(1, 'Membuat tampilan login ', 'Buatlah tampilan login sesuai dengan UI/UX yang sudah di berikan.', '2023-08-08', '2023-08-10', 1, 2),
+(5, 'Membuat tampilan dashboard user', 'Membuat tampilan dashboard untuk user sesuai UI/UX yg sudah di berikan', '2023-08-11', '2023-09-11', 1, 2);
 
 -- --------------------------------------------------------
 
@@ -120,9 +122,7 @@ INSERT INTO `tb_user` (`id`, `username`, `name`, `password`) VALUES
 -- Indexes for table `tb_laporan`
 --
 ALTER TABLE `tb_laporan`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_tugas` (`id_tugas`),
-  ADD UNIQUE KEY `id_user` (`id_user`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_project`
@@ -134,9 +134,7 @@ ALTER TABLE `tb_project`
 -- Indexes for table `tb_tugas`
 --
 ALTER TABLE `tb_tugas`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id_user` (`id_user`),
-  ADD UNIQUE KEY `id_project` (`id_project`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `tb_user`
@@ -152,7 +150,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT for table `tb_laporan`
 --
 ALTER TABLE `tb_laporan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `tb_project`
@@ -164,7 +162,7 @@ ALTER TABLE `tb_project`
 -- AUTO_INCREMENT for table `tb_tugas`
 --
 ALTER TABLE `tb_tugas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `tb_user`

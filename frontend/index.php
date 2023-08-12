@@ -10,21 +10,18 @@ if (!isset($user_id)) {
    header('location:login.php');
 }
 
-// $data = file_get_contents('http://localhost/project-pkl/backend/data_project.php');
-// $result = json_decode($data, true);
-
-// $result = $result['data_project'];
-
-$url = 'http://localhost/project-pkl/backend/data_project.php';
+$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_tugas.php';
 $data = file_get_contents($url);
 
 if ($data !== false) {
    $result = json_decode($data, true);
    if ($result !== null) {
-      if (array_key_exists('data_project', $result)) {
-         $data_project = $result['data_project'];
+      if (array_key_exists('data_tugas', $result)) {
+         $data_tugas = $result['data_tugas'];
+         $randomIndex = array_rand($data_tugas);
+         $data_tugas = $data_tugas[$randomIndex];
       } else {
-         echo 'Key "data_project" tidak ditemukan dalam respons JSON.';
+         echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
       }
    } else {
       echo 'Gagal menguraikan data JSON.';
@@ -118,6 +115,7 @@ if ($data !== false) {
                         <p id="day"></p>
                         <p id="date"></p>/
                         <p id="month"></p>
+                        <p id="year"></p>
                      </div>
                   </div>
 
@@ -150,30 +148,35 @@ if ($data !== false) {
                      <h2>Jobs Today</h2>
                      <a href="hasil.php" class="btn">History Kerja</a>
                   </div>
-                  <div class="wadah-table">
-                     <table>
-                        <?php foreach ($data_project as $project) : ?>
+                  <?php //foreach ($data_tugas as $tugas) : ?>
+                     <div class="wadah-table">
+                        <table>
                            <tbody>
                               <tr>
-                                 <td>Name Project</td>
-                                 <td><?= $project["nama_project"] ?></td>
+                                 <td>Name Tugas</td>
+                                 <td><?= $data_tugas["nama_tugas"] ?></td>
                               </tr>
                            </tbody>
 
                            <tbody>
-                              <tr>
-                                 <td>Tugas</td>
-                                 <td><?= $project["tugas"] ?></td>
-                              </tr>
-
                               <tr>
                                  <td>Deskripsi</td>
-                                 <td><?= $project["deskripsi"] ?></td>
+                                 <td><?= $data_tugas["deskripsi"] ?></td>
+                              </tr>
+
+                              <tr>
+                                 <td>Tanggal Mulai</td>
+                                 <td><?= $data_tugas["tgl_mulai"] ?></td>
+                              </tr>
+
+                              <tr>
+                                 <td>Tanggal Selesai</td>
+                                 <td><?= $data_tugas["tgl_selesai"] ?></td>
                               </tr>
                            </tbody>
-                        <?php endforeach ?>
-                     </table>
-                  </div>
+                        </table>
+                     </div>
+                  <?php //endforeach ?>
                </div>
 
                <!-- ================= New Customers ================ -->
@@ -190,7 +193,7 @@ if ($data !== false) {
                         </p>
                         <hr>
 
-                        <form action="http://localhost/project-pkl/backend/laporan.php" method="post">
+                        <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/create_laporan.php" method="post">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name">
@@ -201,13 +204,13 @@ if ($data !== false) {
                               <br>
                               <br>
                               <label for="">Keluhan</label><br>
-                              <textarea name="" id="" cols="30" rows="5" placeholder="Masukan Keluhan"></textarea>
+                              <textarea name="keluhan" id="" cols="30" rows="5" placeholder="Masukan Keluhan"></textarea>
                               <br>
                               <br>
                               <label for="">Progres</label><br>
                               <div class="field">
                                  <div class="range-active">
-                                    <input class="range" type="range" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                                    <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
                                  </div>
 
                                  <div class="value">
@@ -216,13 +219,13 @@ if ($data !== false) {
                               </div>
                            </div>
                            <div class="btn-form">
-                              <input type="hidden" name="id_tugas" value="1">
+                              <input type="hidden" name="id_tugas" value="5">
                               <input type="hidden" name="id_user" value="<?= $user_id ?>">
                               <button class="learn-more">
                                  <span class="circle" aria-hidden="true">
                                     <span class="icon arrow"></span>
                                  </span>
-                                 <span class="button-text">Learn More</span>
+                                 <span class="button-text">Simpan</span>
                               </button>
                            </div>
                         </form>
