@@ -133,7 +133,7 @@ body {
 
 .navigation ul li:hover a::after,
 .navigation ul li.hovered a::after {
- 
+
    content: "";
    position: absolute;
    right: 0;
@@ -463,7 +463,7 @@ body {
    border-radius: 6px;
 }
 
-.cardHeader .btn:active{
+.cardHeader .btn:active {
    background-color: #0066ff8e;
 }
 
@@ -549,7 +549,7 @@ body {
    color: white;
 }
 
-.container-form ion-icon{
+.container-form ion-icon {
    font-size: 1.5rem;
    color: #191919;
 }
@@ -622,18 +622,16 @@ form textarea {
    width: 120%;
 }
 
-.field .value{
+.field .value {
    color: white;
-   position: absolute;   
+   position: absolute;
    right: 0;
 }
 
-.field .value span{
- 
-}
+.field .value span {}
 
 
-.field .range-active input.range:active{
+.field .range-active input.range:active {
    background-color: aqua;
 }
 
@@ -671,7 +669,7 @@ form textarea {
    cursor: pointer;
 }
 
-.field input::-webkit-progress-bar{
+.field input::-webkit-progress-bar {
    background-color: #0066ff;
 }
 
@@ -733,7 +731,7 @@ button {
 button.learn-more {
    width: 15rem;
    height: auto;
-  margin: 0 auto;
+   margin: 0 auto;
 }
 
 button.learn-more .circle {

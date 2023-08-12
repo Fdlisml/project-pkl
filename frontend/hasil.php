@@ -110,7 +110,6 @@ if ($data !== false) {
                         <p id="day"></p>
                         <p id="date"></p>/
                         <p id="month"></p>
-                        <p id="year"></p>
                      </div>
                   </div>
 
@@ -141,11 +140,12 @@ if ($data !== false) {
                <div class="recentOrders">
                   <div class="cardHeader">
                      <h2>Jobs Today</h2>
+                     <a href="index.php" class="btn">Pekerjaan</a>
                   </div>
-                  <?php foreach ($data_laporan as $laporan) : ?>
-                     <div class="wadah-table">
-                        <a href="#" class="btn">Ubah</a>
-                        <table>
+
+                  <div class="wadah-table">
+                     <table>
+                        <?php foreach ($data_laporan as $laporan) : ?>
                            <tbody>
                               <tr>
                                  <td>Name Laporan</td>
@@ -165,22 +165,105 @@ if ($data !== false) {
                               </tr>
 
                               <tr>
-                                 <td>Tanggal Laporan</td>
-                                 <td><?= $laporan["tgl_laporan"] ?></td>
+                                 <td>Progress</td>
+                                 <td><?= $laporan["progres"] ?>%</td>
                               </tr>
 
                               <tr>
-                                 <td>Progres</td>
-                                 <td><?= $laporan["progres"] . "%" ?></td>
+                                 <td>Tanggal Laporan</td>
+                                 <td><?= $laporan["tgl_laporan"] ?></td>
                               </tr>
                            </tbody>
-                        </table>
-                     </div>
-                  <?php endforeach ?>
+                        <?php endforeach ?>
+                     </table>
+                  </div>
                </div>
+            </div>
+            >>>>>>> 6cbcf45367736b86cc0542d1f24920280020ace4
+         </div>
+
+         <!-- ======================= Cards ================== -->
+         <div class="cardBox">
+            <div class="card">
+               <div>
+                  <div class="say">Good Morning, <?= $name ?></div>
+                  <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
+                  <div id="txt"></div>
+                  <div class="left2">
+                     <p id="day"></p>
+                     <p id="date"></p>/
+                     <p id="month"></p>
+                     <p id="year"></p>
+                  </div>
+               </div>
+
+               <div class="imgBx">
+                  <img src="public/image/Telecommuting-pana-removebg-preview.png">
+               </div>
+            </div>
+
+            <div class="card">
+               <div class="container2">
+                  <div class="cloud front">
+                     <span class="left-front"></span>
+                     <span class="right-front"></span>
+                  </div>
+                  <span class="sun sunshine"></span>
+                  <span class="sun"></span>
+                  <div class="cloud back">
+                     <span class="left-back"></span>
+                     <span class="right-back"></span>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+
+         <!-- ================ Order Details List ================= -->
+         <div class="details">
+            <div class="recentOrders">
+               <div class="cardHeader">
+                  <h2>Jobs Today</h2>
+               </div>
+               <?php foreach ($data_laporan as $laporan) : ?>
+                  <div class="wadah-table">
+                     <a href="#" class="btn">Ubah</a>
+                     <table>
+                        <tbody>
+                           <tr>
+                              <td>Name Laporan</td>
+                              <td><?= $laporan["nama_laporan"] ?></td>
+                           </tr>
+                        </tbody>
+
+                        <tbody>
+                           <tr>
+                              <td>Deskripsi</td>
+                              <td><?= $laporan["deskripsi"] ?></td>
+                           </tr>
+
+                           <tr>
+                              <td>Keluhan</td>
+                              <td><?= $laporan["keluhan"] ?></td>
+                           </tr>
+
+                           <tr>
+                              <td>Tanggal Laporan</td>
+                              <td><?= $laporan["tgl_laporan"] ?></td>
+                           </tr>
+
+                           <tr>
+                              <td>Progres</td>
+                              <td><?= $laporan["progres"] . "%" ?></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               <?php endforeach ?>
             </div>
          </div>
       </div>
+   </div>
    </div>
 
    <script src="public/js/script.js"></script>
