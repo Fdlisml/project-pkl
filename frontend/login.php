@@ -48,6 +48,7 @@ if (isset($_POST['login'])) {
 <body>
 
    <div class="container">
+
       <div class="left">
          <div class="wadah-img">
             <img src="public/image/Two factor authentication-pana.png" alt="login">
@@ -58,6 +59,10 @@ if (isset($_POST['login'])) {
          <div class="wadah">
             <h3>Welcome back,</h3>
             <h2>Sign In,</h2>
+
+            <div class="img-mobile">
+            <img src="public/image/Two factor authentication-pana.png" alt="login-mobile">
+            </div>
 
 
             <form method="post">

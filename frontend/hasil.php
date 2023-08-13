@@ -140,13 +140,13 @@ if ($data !== false) {
             <div class="details">
                <div class="recentOrders">
                   <div class="cardHeader">
-                     <h2>Jobs Today</h2>
+                     <h2>Working Result</h2>
                      <a href="index.php" class="btn">Pekerjaan</a>
                   </div>
 
                   <?php foreach ($data_laporan as $laporan) : ?>
                      <div class="wadah-table">
-                        <span class="btn" id="myBtn">Ubah</span>
+
                         <table>
                            <tbody>
                               <tr>
@@ -177,6 +177,9 @@ if ($data !== false) {
                               </tr>
                            </tbody>
                         </table>
+                        <div class="btn-update">
+                           <span class="btn" id="myBtn">Ubah</span>
+                        </div>
                      </div>
                   <?php endforeach ?>
                </div>
@@ -193,31 +196,31 @@ if ($data !== false) {
                   <span class="close">&times;</span>
                   <h2>Form Update Laporan</h2>
                </div> -->
-               <!-- <div class="modal-body"> -->
-                  <div class="modal-container">
-                     <span class="close">&times;</span>
-                     <form class="modal-form" method="post">
-                        <span class="modal-title">Form</span>
-                        <label for="nama_laporan" class="modal-label">Nama laporan</label>
-                        <input type="text" name="nama_laporan" required="" class="modal-input">
-                        <label for="deskripsi" class="modal-label">Deskripsi Laporan</label>
-                        <textarea name="deskripsi" required="" class="modal-input" cols="5" rows="5"></textarea>
-                        <label for="keluhan" class="modal-label">Keluhan</label>
-                        <textarea name="keluhan" required="" class="modal-input" cols="5" rows="5"></textarea>
-                        <label for="">Progres</label><br>
-                        <div class="field">
-                           <div class="range-active">
-                              <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
-                           </div>
+            <!-- <div class="modal-body"> -->
+            <div class="modal-container">
+               <span class="close">&times;</span>
+               <form class="modal-form" method="post">
+                  <span class="modal-title">Form</span>
+                  <label for="nama_laporan" class="modal-label">Nama laporan</label>
+                  <input type="text" name="nama_laporan" required="" class="modal-input">
+                  <label for="deskripsi" class="modal-label">Deskripsi Laporan</label>
+                  <textarea name="deskripsi" required="" class="modal-input" cols="5" rows="5"></textarea>
+                  <label for="keluhan" class="modal-label">Keluhan</label>
+                  <textarea name="keluhan" required="" class="modal-input" cols="5" rows="5"></textarea>
+                  <label for="">Progres</label><br>
+                  <div class="field">
+                     <div class="range-active">
+                        <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                     </div>
 
-                           <div class="value">
-                              <span id="rangeValue">0</span>%
-                           </div>
-                        </div>
-                        <button type="submit" class="modal-submit" name="login">Login</button>
-                     </form>
+                     <div class="value">
+                        <span id="rangeValue">0</span>%
+                     </div>
                   </div>
-               <!-- </div> -->
+                  <button type="submit" class="modal-submit" name="login">Login</button>
+               </form>
+            </div>
+            <!-- </div> -->
             <!-- </div> -->
          </div>
 

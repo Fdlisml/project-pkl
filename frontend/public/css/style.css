@@ -223,14 +223,12 @@ body {
 .cardBox .card {
    position: relative;
    display: flex;
-
    background: var(--white);
    padding: 30px;
    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
    border-radius: 20px;
    justify-content: space-between;
    cursor: pointer;
-   /* width: 132%; */
    height: 200px;
 }
 
@@ -262,7 +260,7 @@ body {
    position: absolute;
    bottom: 0;
    font-weight: bold;
-   margin-left: 30px;
+   margin-left: 10px;
 }
 
 #date {
@@ -470,7 +468,7 @@ body {
 .details table {
    width: 100%;
    border-collapse: collapse;
-   border-top: 2px solid black;
+   border-top: 2px solid #27272794;
 }
 
 .details .wadah-table {
@@ -483,13 +481,15 @@ body {
 
 .details table tr {
    width: 100%;
+   height: 70px;
 }
 
 .details table td {
+   height: 30px;
    font-weight: 500;
    /* text-align: start; */
    padding: 10px;
-   border-bottom: 2px solid #272727;
+   border-bottom: 2px solid #27272794;
 }
 
 /*form  */

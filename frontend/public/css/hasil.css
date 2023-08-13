@@ -288,7 +288,7 @@ body {
    position: absolute;
    bottom: 0;
    font-weight: bold;
-   margin-left: 30px;
+   margin-left: 10px;
 }
 
 #date {
@@ -472,7 +472,7 @@ body {
 .details .cardHeader {
    display: flex;
    justify-content: space-between;
-   align-items: flex-start;
+   align-items: center;
 }
 
 .details .wadah-table {
@@ -481,15 +481,6 @@ body {
    /* background-color: #222; */
    border-radius: 15px;
    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
-}
-
-.wadah-table .btn {
-   position: relative;
-   padding: 10px 25px;
-   background: var(--blue);
-   text-decoration: none;
-   color: var(--white);
-   border-radius: 6px;
 }
 
 .cardHeader h2 {
@@ -507,8 +498,6 @@ body {
 }
 
 .details .wadah-table {
-   margin-top: 30px;
-   /* background-color: #4c9beb; */
    padding: 20px;
    border-radius: 15px;
    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -517,16 +506,16 @@ body {
 .details table {
    width: 100%;
    border-collapse: collapse;
-   border-top: 2px solid black;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.425);
+   margin-bottom: 30px;
 }
 
-.details table thead td {
-   line-height: 40px;
+.details table td {
+   height:  70px;
    font-weight: 600;
    text-align: start;
-   border-bottom: 2px solid black;
+   border-top: 2px solid rgba(0, 0, 0, 0.425);
 }
-
 
 .details table tr {
    color: var(--black1);
@@ -550,7 +539,20 @@ body {
    text-align: center;
 }
 
+.wadah-table .btn-update{
+   display: flex;
+   justify-content: end;
+}
 
+.wadah-table span.btn {
+   /* display: flex; */
+   /* justify-content: end; */
+   padding: 10px 25px;
+   background: var(--blue);
+   text-decoration: none;
+   color: var(--white);
+   border-radius: 6px;
+}
 
 /*form  */
 .recentCustomers {
@@ -638,7 +640,7 @@ form input {
    border-radius: 10px;
    outline: 1px solid rgba(14, 14, 14, 0.205);
    border: none;
-   padding: 0 ;
+   padding: 0;
    font-weight: bold;
 }
 

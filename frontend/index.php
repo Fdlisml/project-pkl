@@ -145,35 +145,37 @@ if ($data !== false) {
                      <h2>Jobs Today</h2>
                      <a href="hasil.php" class="btn">History Kerja</a>
                   </div>
-                  <?php //foreach ($data_tugas as $tugas) : ?>
-                     <div class="wadah-table">
-                        <table>
-                           <tbody>
-                              <tr>
-                                 <td>Name Tugas</td>
-                                 <td><?= $data_tugas["nama_tugas"] ?></td>
-                              </tr>
-                           </tbody>
+                  <?php //foreach ($data_tugas as $tugas) : 
+                  ?>
+                  <div class="wadah-table">
+                     <table>
+                        <tbody>
+                           <tr>
+                              <td>Name Tugas</td>
+                              <td><?= $data_tugas["nama_tugas"] ?></td>
+                           </tr>
+                        </tbody>
 
-                           <tbody>
-                              <tr>
-                                 <td>Deskripsi</td>
-                                 <td><?= $data_tugas["deskripsi"] ?></td>
-                              </tr>
+                        <tbody>
+                           <tr>
+                              <td>Deskripsi</td>
+                              <td><?= $data_tugas["deskripsi"] ?></td>
+                           </tr>
 
-                              <tr>
-                                 <td>Tanggal Mulai</td>
-                                 <td><?= $data_tugas["tgl_mulai"] ?></td>
-                              </tr>
+                           <tr>
+                              <td>Tanggal Mulai</td>
+                              <td><?= $data_tugas["tgl_mulai"] ?></td>
+                           </tr>
 
-                              <tr>
-                                 <td>Tanggal Selesai</td>
-                                 <td><?= $data_tugas["tgl_selesai"] ?></td>
-                              </tr>
-                           </tbody>
-                        </table>
-                     </div>
-                  <?php //endforeach ?>
+                           <tr>
+                              <td>Tanggal Selesai</td>
+                              <td><?= $data_tugas["tgl_selesai"] ?></td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+                  <?php //endforeach 
+                  ?>
                </div>
 
                <!-- ================= New Customers ================ -->

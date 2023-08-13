@@ -19,7 +19,7 @@ body {
 
 .container {
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
     justify-content: center;
     align-items: center;
 }
@@ -29,18 +29,30 @@ body {
     /* backdrop-filter: blur(10px); */
     border-top-left-radius: 15px;
     border-bottom-left-radius: 15px;
-    height: 455px;
+    height: 477px;
     display: flex;
     align-items: center;
 }
 
 .left .wadah-img img {
-    width: 450px;
+    max-width: 450px;
+}
+
+.container .right .img-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    display: none;
+}
+
+.container .right .img-mobile img{
+    max-width: 200px;
 }
 
 .right {
     background-color: rgb(255, 255, 255);
-    height: 60vh;
+    height: 400px;
     padding: 5%;
     width: 350px;
     border-top-right-radius: 20px;
@@ -87,7 +99,7 @@ form input::placeholder {
     font-family: poppins;
 }
 
-.boxx{
+.boxx {
     width: 245px;
     padding: 10px 10px;
     border: 2px solid #d4d1d1;
@@ -100,11 +112,11 @@ form input::placeholder {
     align-items: center;
 }
 
-form input.user{
+form input.user {
     border: none;
 }
 
-.box{
+.box {
     width: 245px;
     padding: 10px;
     border: 2px solid #d4d1d1;
@@ -117,7 +129,7 @@ form input.user{
     height: 10px;
 }
 
-form input.pw{
+form input.pw {
     border: none;
     display: flex;
     gap: .5rem;
@@ -141,4 +153,55 @@ form input.pw{
 
 .btn input:active {
     background-color: #2ba2f7b7;
+}
+
+/* responsive */
+
+@media (max-width: 884px) {
+    .container .left{
+        transition: .5s ease-in-out;
+        height: 460px;;
+    }
+
+    .left .wadah-img img {
+        transition: .5s ease-in-out;
+        max-width: 300px;
+    }
+
+    .right {
+        transition: .5s ease-in-out;
+        height: 400px;
+        width: 300px;
+    }   
+}
+
+@media (max-width: 525px) {
+    body{
+        background-image: none;
+        background-color: #0066ff;
+        backdrop-filter: none;
+        height: 100vh;
+    }
+    .container .left{
+        transition: .5s ease-in-out;
+        display: none;
+    }
+
+    .right{
+        border-radius: 20px;
+        height: 80vh;
+        
+    }
+
+    .container .right .img-mobile {
+        display: flex;
+    }
+
+    form{
+        margin-top: 0;
+    }
+
+    .btn input{
+        margin-top: 10px;
+    }
 }
