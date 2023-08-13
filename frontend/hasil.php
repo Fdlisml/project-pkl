@@ -146,7 +146,7 @@ if ($data !== false) {
 
                   <?php foreach ($data_laporan as $laporan) : ?>
                      <div class="wadah-table">
-                     <a href="#" class="btn">Ubah</a>
+                        <span class="btn" id="myBtn">Ubah</span>
                         <table>
                            <tbody>
                               <tr>
@@ -182,9 +182,48 @@ if ($data !== false) {
                </div>
             </div>
          </div>
-   <script src="public/js/script.js"></script>
 
-   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+         <!-- <button id="myBtn">Open Modal</button> -->
+
+         <!-- The Modal -->
+         <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <!-- <div class="modal-content">
+               <div class="modal-header">
+                  <span class="close">&times;</span>
+                  <h2>Form Update Laporan</h2>
+               </div> -->
+               <!-- <div class="modal-body"> -->
+                  <div class="modal-container">
+                     <span class="close">&times;</span>
+                     <form class="modal-form" method="post">
+                        <span class="modal-title">Form</span>
+                        <label for="nama_laporan" class="modal-label">Nama laporan</label>
+                        <input type="text" name="nama_laporan" required="" class="modal-input">
+                        <label for="deskripsi" class="modal-label">Deskripsi Laporan</label>
+                        <textarea name="deskripsi" required="" class="modal-input" cols="5" rows="5"></textarea>
+                        <label for="keluhan" class="modal-label">Keluhan</label>
+                        <textarea name="keluhan" required="" class="modal-input" cols="5" rows="5"></textarea>
+                        <label for="">Progres</label><br>
+                        <div class="field">
+                           <div class="range-active">
+                              <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                           </div>
+
+                           <div class="value">
+                              <span id="rangeValue">0</span>%
+                           </div>
+                        </div>
+                        <button type="submit" class="modal-submit" name="login">Login</button>
+                     </form>
+                  </div>
+               <!-- </div> -->
+            <!-- </div> -->
+         </div>
+
+         <script src="public/js/script.js"></script>
+
+         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
 </html>

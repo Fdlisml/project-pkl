@@ -193,15 +193,15 @@ if ($data !== false) {
                         <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/create_laporan.php" method="post">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
-                              <input type="text" name="nama_laporan" placeholder="Enter a Report Name">
+                              <input type="text" name="nama_laporan" placeholder="Enter a Report Name" required>
                               <br>
                               <br>
                               <label for="">Deskripsi Laporan</label><br>
-                              <textarea name="deskripsi" id="" cols="30" rows="5" placeholder="Masukan Laporan"></textarea>
+                              <textarea name="deskripsi" id="" cols="30" rows="5" placeholder="Masukan Laporan" required></textarea>
                               <br>
                               <br>
                               <label for="">Keluhan</label><br>
-                              <textarea name="keluhan" id="" cols="30" rows="5" placeholder="Masukan Keluhan"></textarea>
+                              <textarea name="keluhan" id="" cols="30" rows="5" placeholder="Masukan Keluhan" required></textarea>
                               <br>
                               <br>
                               <label for="">Progres</label><br>
