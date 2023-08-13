@@ -30,10 +30,7 @@ if ($data !== false) {
    echo 'Gagal mengambil konten dari URL.';
 }
 
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
