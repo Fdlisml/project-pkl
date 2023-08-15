@@ -46,7 +46,7 @@ body {
     display: none;
 }
 
-.container .right .img-mobile img{
+.container .right .img-mobile img {
     max-width: 200px;
 }
 
@@ -158,9 +158,10 @@ form input.pw {
 /* responsive */
 
 @media (max-width: 884px) {
-    .container .left{
+    .container .left {
         transition: .5s ease-in-out;
-        height: 460px;;
+        height: 460px;
+        ;
     }
 
     .left .wadah-img img {
@@ -172,36 +173,37 @@ form input.pw {
         transition: .5s ease-in-out;
         height: 400px;
         width: 300px;
-    }   
+    }
 }
 
 @media (max-width: 525px) {
-    body{
+    body {
         background-image: none;
         background-color: #0066ff;
         backdrop-filter: none;
         height: 100vh;
     }
-    .container .left{
+
+    .container .left {
         transition: .5s ease-in-out;
         display: none;
     }
 
-    .right{
+    .right {
         border-radius: 20px;
-        height: 80vh;
-        
+        /* height: 80vh; */
+        height: 530px;
     }
 
     .container .right .img-mobile {
         display: flex;
     }
 
-    form{
+    form {
         margin-top: 0;
     }
 
-    .btn input{
+    .btn input {
         margin-top: 10px;
     }
 }

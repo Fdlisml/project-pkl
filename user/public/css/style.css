@@ -90,8 +90,14 @@ body {
    text-align: center;
 }
 
-.navigation .logo-bg {
+.navigation .logo-flex{
+   display: flex;
+   align-items: center;
    margin-top: 10px;
+}
+
+.navigation .logo-bg {
+   /* margin-top: 10px; */
    background-color: white;
    padding: 5px;
    border-radius: 100%;
