@@ -194,7 +194,7 @@ if ($data !== false) {
                         </p>
                         <hr>
 
-                        <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan" method="post">
+                        <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan" method="POST">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name" required>
