@@ -10,7 +10,7 @@ if (!isset($user_id)) {
    header('location:login.php');
 }
 
-$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_laporan.php';
+$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan';
 $data = file_get_contents($url);
 
 if ($data !== false) {
