@@ -114,6 +114,7 @@ if ($data !== false) {
                         <p id="day"></p>
                         <p id="date"></p>/
                         <p id="month"></p>
+                        <p></p>
                         <p id="year"></p>
                      </div>
                   </div>
@@ -190,10 +191,8 @@ if ($data !== false) {
                      <div class="container-form">
                         <p>
                            <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
-
                         </p>
                         <hr>
-
                         <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan" method="POST">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>

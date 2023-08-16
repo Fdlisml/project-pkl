@@ -91,7 +91,7 @@ if (!isset($user_id)) {
                         <img src="public/image/customer01.jpg" alt="">
                     </div>
                 </div>
-                
+
                 <!-- ================ Order Details List ================= -->
                 <div class="details">
                     <div class="recentOrders">

@@ -48,12 +48,14 @@ if ($data !== false) {
          <ul>
             <li>
                <a href="#">
-                  <span class="icon">
-                     <div class="logo-bg">
-                        <img src="public/image/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
-                     </div>
-                  </span>
-                  <span class="title">WorkAssigner</span>
+                  <div class="logo-flex">
+                     <span class="icon">
+                        <div class="logo-bg">
+                           <img src="public/image/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
+                        </div>
+                     </span>
+                     <span class="title">WorkAssigner</span>
+                  </div>
                </a>
             </li>
 
@@ -146,7 +148,6 @@ if ($data !== false) {
 
                   <?php foreach ($data_laporan as $laporan) : ?>
                      <div class="wadah-table">
-1
                         <table>
                            <tbody>
                               <tr>

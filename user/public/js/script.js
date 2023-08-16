@@ -45,7 +45,9 @@ function startTime() {
    document.getElementById("txt").innerHTML = h + ":" + m + " " + meridiem;
 
    // To update time every second
-   var t = setTimeout(function () { startTime() }, 1000);
+   var t = setTimeout(function () {
+      startTime()
+   }, 1000);
 }
 
 function checkTime(i) {
