@@ -1,3 +1,16 @@
+<?php 
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+$name = $_SESSION['name'];
+
+if (!isset($user_id)) {
+    header('location:login.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,7 +36,7 @@
                                     <img src="assets/imgs/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
                                 </div>
                             </span>
-                            <span class="title">Work Assigner</span>
+                            <span class="title">WorkAssigner</span>
                         </div>
                     </a>
                 </li>
@@ -56,7 +69,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -98,7 +111,13 @@
                                 <label for="deskripsi">
                                     Deskripsi <input type="text" name="deskripsi">
                                 </label>
-                                <input type="submit" name="submit" value="Kirim !">
+                                <button class="cta">
+                                    <span>Send Work !</span>
+                                    <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                        <path d="M1,5 L11,5"></path>
+                                        <polyline points="8 1 12 5 8 9"></polyline>
+                                    </svg>
+                                </button>
                             </form>
                         </div>
                     </div>
