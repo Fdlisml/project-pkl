@@ -76,6 +76,13 @@ body {
   align-items: center;
   height: 100%;
 }
+
+.navigation .logo-flex{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
 .navigation ul li:hover a,
 .navigation ul li.hovered a {
   color: var(--blue);
@@ -88,7 +95,7 @@ body {
   text-align: center;
 }
 .navigation .logo-bg {
-  margin-top: 10px;
+  
   background-color: white;
   padding: 5px;
   border-radius: 100%;
@@ -250,6 +257,8 @@ body {
 .cardBox .card:hover .iconBx {
   color: var(--white);
 }
+
+
 
 /* ================== Order Details List ============== */
 .details {

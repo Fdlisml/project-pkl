@@ -17,19 +17,21 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon">
-                            <div class="logo-bg">
-                                <img src="assets/imgs/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
-                            </div>
-                        </span>
-                        <span class="title">Work Assigner</span>
+                        <div class="logo-flex">
+                            <span class="icon">
+                                <div class="logo-bg">
+                                    <img src="assets/imgs/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
+                                </div>
+                            </span>
+                            <span class="title">Work Assigner</span>
+                        </div>
                     </a>
                 </li>
 
                 <li>
                     <a href="index.php">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <ion-icon name="document-text-outline"></ion-icon>
                         </span>
                         <span class="title">Project</span>
                     </a>
@@ -38,18 +40,18 @@
                 <li>
                     <a href="laporan.php">
                         <span class="icon">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
+                            <ion-icon name="folder-open-outline"></ion-icon>
                         </span>
-                        <span class="title">Laporan</span>
+                        <span class="title">Report</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="tugas.php">
                         <span class="icon">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
+                            <ion-icon name="reader-outline"></ion-icon>
                         </span>
-                        <span class="title">Tugas</span>
+                        <span class="title">Work</span>
                     </a>
                 </li>
 
@@ -69,128 +71,128 @@
             <div class="secMain">
                 <div class="topbar">
                     <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
-
-                <div class="user">
-                    <img src="public/image/customer01.jpg" alt="">
-                </div>
-            </div>
-
-            <!-- ================ Order Details List ================= -->
-            <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Data Project</h2>
-                        <a href="#" class="btn">View All</a>
+                        <ion-icon name="menu-outline"></ion-icon>
                     </div>
 
-                    <div class="form">
-                        <form action="" method="post">
-                            <label for="nama_project">
-                                Nama Project <input type="text" name="nama_project">
-                            </label>
-                            <label for="tugas">
-                                tugas <input type="text" name="tugas">
-                            </label>
-                            <label for="deskripsi">
-                                Deskripsi <input type="text" name="deskripsi">
-                            </label>
-                            <input type="submit" name="submit" value="Kirim !">
-                        </form>
+                    <div class="user">
+                        <img src="public/image/customer01.jpg" alt="">
                     </div>
                 </div>
+                
+                <!-- ================ Order Details List ================= -->
+                <div class="details">
+                    <div class="recentOrders">
+                        <div class="cardHeader">
+                            <h2>Data Project</h2>
+                            <a href="#" class="btn">View All</a>
+                        </div>
 
-                <!-- ================= New Customers ================ -->
-                <div class="recentCustomers">
-                    <div class="cardHeader">
-                        <h2>Data Project</h2>
+                        <div class="form">
+                            <form action="" method="post">
+                                <label for="nama_project">
+                                    Nama Project <input type="text" name="nama_project">
+                                </label>
+                                <label for="tugas">
+                                    tugas <input type="text" name="tugas">
+                                </label>
+                                <label for="deskripsi">
+                                    Deskripsi <input type="text" name="deskripsi">
+                                </label>
+                                <input type="submit" name="submit" value="Kirim !">
+                            </form>
+                        </div>
                     </div>
 
-                    <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
+                    <!-- ================= New Customers ================ -->
+                    <div class="recentCustomers">
+                        <div class="cardHeader">
+                            <h2>Data Project</h2>
+                        </div>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
+                        <table>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
 
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
-                    </table>
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>David <br> <span>Italy</span></h4>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td width="60px">
+                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
+                                </td>
+                                <td>
+                                    <h4>Amit <br> <span>India</span></h4>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- =========== Scripts =========  -->
-    <script src="assets/js/main.js"></script>
+        <!-- =========== Scripts =========  -->
+        <script src="assets/js/main.js"></script>
 
-    <!-- ====== ionicons ======= -->
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <!-- ====== ionicons ======= -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

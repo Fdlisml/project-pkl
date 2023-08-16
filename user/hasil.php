@@ -146,7 +146,7 @@ if ($data !== false) {
 
                   <?php foreach ($data_laporan as $laporan) : ?>
                      <div class="wadah-table">
-
+1
                         <table>
                            <tbody>
                               <tr>
