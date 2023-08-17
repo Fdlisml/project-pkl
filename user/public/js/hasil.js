@@ -106,42 +106,31 @@ function rangeSlide(value) {
    document.getElementById("rangeValue").innerHTML = value;
 }
 
-// MODAL BOX
-// Get the modal
-const modal = document.getElementById("myModal");
+// // MODAL BOX
+// // Get the modal
+// const modal = document.getElementById("myModal");
 
-// Get the button that opens the modal
-const btns = document.querySelectorAll("#myBtn");
+// // Get the button that opens the modal
+// const btns = document.querySelectorAll("#myBtn");
 
-// Get the <span> element that closes the modal
-const span = document.getElementsByClassName("close")[0];
+// // Get the <span> element that closes the modal
+// const span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
-btns.forEach(function (btn) {
-   btn.addEventListener("click", function () {
-      modal.style.display = "block";
-   });
-});
+// // When the user clicks the button, open the modal 
+// btns.forEach(function (btn) {
+//    btn.addEventListener("click", function () {
+//       modal.style.display = "block";
+//    });
+// });
 
-// When the user clicks on <span> (x), close the modal
-span.addEventListener("click", function () {
-   modal.style.display = "none";
-});
+// // When the user clicks on <span> (x), close the modal
+// span.addEventListener("click", function () {
+//    modal.style.display = "none";
+// });
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-   if (event.target == modal) {
-      modal.style.display = "none";
-   }
-}
-
-// Mengambil ID dari laporan yg ingin di ubah
-const dataSpans = document.querySelectorAll('.btn');
-
-// Tambahkan event listener ke setiap elemen
-dataSpans.forEach(span => {
-   span.addEventListener('click', () => {
-      const dataId = span.getAttribute('data-id'); // Ambil nilai data-id dari elemen
-      console.log(`Nilai Data-ID: ${dataId}`);
-   });
-});
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function (event) {
+//    if (event.target == modal) {
+//       modal.style.display = "none";
+//    }
+// }

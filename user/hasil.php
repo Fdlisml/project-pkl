@@ -167,21 +167,24 @@ if ($data !== false) {
                                  <td><?= $laporan["keluhan"] ?></td>
                               </tr>
 
-                              <tr>
-                                 <td>Progress</td>
-                                 <!-- <td><?php //$laporan["progres"] ?>%</td> -->
-                                 <td><input type="number" value="<?= $laporan["progres"] ?>">%</td>
-                              </tr>
+                              <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan/<?= $laporan["id"] ?>" method="POST">
+                                 <tr>
+                                    <td>Progress</td>
+                                    <td><input type="number" value="<?= $laporan["progres"] ?>" name="progres" max="100" min="0">%</td>
+                                 </tr>
 
-                              <tr>
-                                 <td>Tanggal Laporan</td>
-                                 <td><?= $laporan["tgl_laporan"] ?></td>
-                              </tr>
+                                 <tr>
+                                    <td>Tanggal Laporan</td>
+                                    <td><?= $laporan["tgl_laporan"] ?></td>
+                                 </tr>
                            </tbody>
                         </table>
                         <div class="btn-update">
-                           <a href="klikyuk.com/ngankngonk/fadli/api.php/laporan/<?= $laporan["id"] ?>"><span class="btn" id="myBtn">Ubah</span></a>
+                           <input type="hidden" name="id_laporan" value="<?= $laporan["id"] ?>">
+                           <input type="hidden" name="_method" value="PUT">
+                           <button type="submit" class="btn" id="myBtn">Ubah</button>
                         </div>
+                        </form>
                      </div>
                   <?php endforeach ?>
                </div>
@@ -191,40 +194,40 @@ if ($data !== false) {
          <!-- <button id="myBtn">Open Modal</button> -->
 
          <!-- The Modal -->
-         <div id="myModal" class="modal">
-            <!-- Modal content -->
-            <!-- <div class="modal-content">
+         <!-- <div id="myModal" class="modal">
+            Modal content
+            <div class="modal-content">
                <div class="modal-header">
                   <span class="close">&times;</span>
                   <h2>Form Update Laporan</h2>
-               </div> -->
-            <!-- <div class="modal-body"> -->
-            <div class="modal-container">
-               <span class="close">&times;</span>
-               <form class="modal-form" method="post">
-                  <span class="modal-title">Form</span>
-                  <label for="nama_laporan" class="modal-label">Nama laporan</label>
-                  <input type="text" name="nama_laporan" required="" class="modal-input">
-                  <label for="deskripsi" class="modal-label">Deskripsi Laporan</label>
-                  <textarea name="deskripsi" required="" class="modal-input" cols="5" rows="5"></textarea>
-                  <label for="keluhan" class="modal-label">Keluhan</label>
-                  <textarea name="keluhan" required="" class="modal-input" cols="5" rows="5"></textarea>
-                  <label for="">Progres</label><br>
-                  <div class="field">
-                     <div class="range-active">
-                        <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
-                     </div>
+               </div>
+               <div class="modal-body">
+                  <div class="modal-container">
+                     <span class="close">&times;</span>
+                     <form class="modal-form" method="post">
+                        <span class="modal-title">Form</span>
+                        <label for="nama_laporan" class="modal-label">Nama laporan</label>
+                        <input type="text" name="nama_laporan" required="" class="modal-input">
+                        <label for="deskripsi" class="modal-label">Deskripsi Laporan</label>
+                        <textarea name="deskripsi" required="" class="modal-input" cols="5" rows="5"></textarea>
+                        <label for="keluhan" class="modal-label">Keluhan</label>
+                        <textarea name="keluhan" required="" class="modal-input" cols="5" rows="5"></textarea>
+                        <label for="">Progres</label><br>
+                        <div class="field">
+                           <div class="range-active">
+                              <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                           </div>
 
-                     <div class="value">
-                        <span id="rangeValue">0</span>%
-                     </div>
+                           <div class="value">
+                              <span id="rangeValue">0</span>%
+                           </div>
+                        </div>
+                        <button type="submit" class="modal-submit" name="login">Login</button>
+                     </form>
                   </div>
-                  <button type="submit" class="modal-submit" name="login">Login</button>
-               </form>
+               </div>
             </div>
-            <!-- </div> -->
-            <!-- </div> -->
-         </div>
+         </div> -->
 
          <script src="public/js/hasil.js"></script>
 
