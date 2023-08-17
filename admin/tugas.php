@@ -1,3 +1,16 @@
+<?php 
+
+session_start();
+
+$user_id = $_SESSION['user_id'];
+$name = $_SESSION['name'];
+
+if (!isset($user_id)) {
+    header('location:login.php');
+}
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,7 +42,7 @@
                 <li>
                     <a href="index.php">
                         <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
+                            <ion-icon name="document-text-outline"></ion-icon>
                         </span>
                         <span class="title">Project</span>
                     </a>
@@ -38,7 +51,7 @@
                 <li>
                     <a href="laporan.php">
                         <span class="icon">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
+                            <ion-icon name="folder-open-outline"></ion-icon>
                         </span>
                         <span class="title">Laporan</span>
                     </a>
@@ -47,14 +60,14 @@
                 <li>
                     <a href="tugas.php">
                         <span class="icon">
-                        <ion-icon name="checkmark-done-outline"></ion-icon>
+                            <ion-icon name="reader-outline"></ion-icon>
                         </span>
                         <span class="title">Tugas</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="logout.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -97,7 +110,13 @@
                             <label for="deskripsi">
                                 Deskripsi <input type="text" name="deskripsi">
                             </label>
-                            <input type="submit" name="submit" value="Kirim !">
+                            <button class="cta">
+                                <span>Send Work !</span>
+                                <svg viewBox="0 0 13 10" height="10px" width="15px">
+                                    <path d="M1,5 L11,5"></path>
+                                    <polyline points="8 1 12 5 8 9"></polyline>
+                                </svg>
+                            </button>
                         </form>
                     </div>
                 </div>
