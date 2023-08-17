@@ -169,7 +169,8 @@ if ($data !== false) {
 
                               <tr>
                                  <td>Progress</td>
-                                 <td><?= $laporan["progres"] ?>%</td>
+                                 <!-- <td><?php //$laporan["progres"] ?>%</td> -->
+                                 <td><input type="number" value="<?= $laporan["progres"] ?>">%</td>
                               </tr>
 
                               <tr>
@@ -179,7 +180,7 @@ if ($data !== false) {
                            </tbody>
                         </table>
                         <div class="btn-update">
-                           <span class="btn" id="myBtn">Ubah</span>
+                           <a href="klikyuk.com/ngankngonk/fadli/api.php/laporan/<?= $laporan["id"] ?>"><span class="btn" id="myBtn">Ubah</span></a>
                         </div>
                      </div>
                   <?php endforeach ?>
@@ -225,7 +226,7 @@ if ($data !== false) {
             <!-- </div> -->
          </div>
 
-         <script src="public/js/script.js"></script>
+         <script src="public/js/hasil.js"></script>
 
          <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
          <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
