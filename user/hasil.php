@@ -1,5 +1,5 @@
 <?php
-include 'config/database.php';
+require_once 'config/database.php';
 
 session_start();
 
@@ -10,23 +10,8 @@ if (!isset($user_id)) {
    header('location:login.php');
 }
 
-$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php';
-$data = file_get_contents($url);
-
-if ($data !== false) {
-   $result = json_decode($data, true);
-   if ($result !== null) {
-      if (array_key_exists('data_laporan', $result)) {
-         $data_laporan = $result['data_laporan'];
-      } else {
-         echo 'Key "data_laporan" tidak ditemukan dalam respons JSON.';
-      }
-   } else {
-      echo 'Gagal menguraikan data JSON.';
-   }
-} else {
-   echo 'Gagal mengambil konten dari URL.';
-}
+require_once 'laporan.php';
+$data_laporan = $data['data_laporan'];
 
 ?>
 <!DOCTYPE html>
@@ -168,9 +153,9 @@ if ($data !== false) {
                                     <td><?= $laporan["keluhan"] ?></td>
                                  </tr>
 
-                                 <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan/<?= $laporan["id"] ?>" method="POST">
+                                 <form action="laporan.php" method="POST">
                                     <tr>
-                                       <td>Progress</td>
+                                       <td>Progres</td>
                                        <td>
                                           <div class="field">
                                              <div class="range-active">
