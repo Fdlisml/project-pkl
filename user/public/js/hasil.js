@@ -102,9 +102,18 @@ year.innerHTML = today.getFullYear();
 
 // range
 
-function rangeSlide(value) {
-   document.getElementById("rangeValue").innerHTML = value;
-}
+// function rangeSlide(value) {
+//    document.getElementById("rangeValue").innerHTML = value;
+// }
+
+// Menambahkan event listener ke setiap input range
+const rangeInputs = document.querySelectorAll('.range');
+rangeInputs.forEach(rangeInput => {
+  const rangeValue = rangeInput.parentElement.nextElementSibling.querySelector('.rangeValue');
+  rangeInput.addEventListener('input', () => {
+    rangeValue.textContent = rangeInput.value + '%';
+  });
+});
 
 // // MODAL BOX
 // // Get the modal

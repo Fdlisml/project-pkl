@@ -10,7 +10,7 @@ if (!isset($user_id)) {
    header('location:login.php');
 }
 
-$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan';
+$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php';
 $data = file_get_contents($url);
 
 if ($data !== false) {
@@ -148,37 +148,48 @@ if ($data !== false) {
 
                   <?php foreach ($data_laporan as $laporan) : ?>
                      <div class="wadah-table">
-                        <table>
-                           <tbody>
-                              <tr>
-                                 <td>Name Laporan</td>
-                                 <td><?= $laporan["nama_laporan"] ?></td>
-                              </tr>
-                           </tbody>
-
-                           <tbody>
-                              <tr>
-                                 <td>Deskripsi</td>
-                                 <td><?= $laporan["deskripsi"] ?></td>
-                              </tr>
-
-                              <tr>
-                                 <td>Keluhan</td>
-                                 <td><?= $laporan["keluhan"] ?></td>
-                              </tr>
-
-                              <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan/<?= $laporan["id"] ?>" method="POST">
+                        <div class="table-flex">
+                           <table>
+                              <tbody>
                                  <tr>
-                                    <td>Progress</td>
-                                    <td><input type="number" value="<?= $laporan["progres"] ?>" name="progres" max="100" min="0">%</td>
+                                    <td>Name Laporan</td>
+                                    <td><?= $laporan["nama_laporan"] ?></td>
+                                 </tr>
+                              </tbody>
+
+                              <tbody>
+                                 <tr>
+                                    <td>Deskripsi</td>
+                                    <td><?= $laporan["deskripsi"] ?></td>
                                  </tr>
 
                                  <tr>
-                                    <td>Tanggal Laporan</td>
-                                    <td><?= $laporan["tgl_laporan"] ?></td>
+                                    <td>Keluhan</td>
+                                    <td><?= $laporan["keluhan"] ?></td>
                                  </tr>
-                           </tbody>
-                        </table>
+
+                                 <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan/<?= $laporan["id"] ?>" method="POST">
+                                    <tr>
+                                       <td>Progress</td>
+                                       <td>
+                                          <div class="field">
+                                             <div class="range-active">
+                                                <input class="range" type="range" name="progres" min="0" max="100" value="<?= $laporan["progres"] ?>" steps="1">
+                                             </div>
+                                             <div class="value">
+                                                <span class="rangeValue"><?= $laporan["progres"] ?>%</span>
+                                             </div>
+                                          </div>
+                                       </td>
+                                    </tr>
+
+                                    <tr>
+                                       <td>Tanggal Laporan</td>
+                                       <td><?= $laporan["tgl_laporan"] ?></td>
+                                    </tr>
+                              </tbody>
+                           </table>
+                        </div>
                         <div class="btn-update">
                            <input type="hidden" name="id_laporan" value="<?= $laporan["id"] ?>">
                            <input type="hidden" name="_method" value="PUT">
