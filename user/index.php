@@ -1,14 +1,14 @@
 <?php
 require_once 'config/database.php';
-
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+   header('Location: login.php');
+   exit;
+}
 
 $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
-
-if (!isset($user_id)) {
-   header('location:login.php');
-}
 
 $url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_tugas.php';
 $data = file_get_contents($url);
@@ -29,7 +29,6 @@ if ($data !== false) {
 } else {
    echo 'Gagal mengambil konten dari URL.';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
