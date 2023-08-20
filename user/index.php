@@ -1,5 +1,5 @@
 <?php
-require_once 'config/database.php';
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
 
-$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_tugas.php';
+$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api/tugas.php/';
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
