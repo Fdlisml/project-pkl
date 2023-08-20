@@ -1,14 +1,14 @@
 <?php
-include 'config/database.php';
-
+require_once 'config/database.php';
 session_start();
+
+if (!isset($_SESSION['user_id'])) {
+   header('Location: login.php');
+   exit;
+}
 
 $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
-
-if (!isset($user_id)) {
-   header('location:login.php');
-}
 
 $url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_tugas.php';
 $data = file_get_contents($url);
@@ -29,7 +29,6 @@ if ($data !== false) {
 } else {
    echo 'Gagal mengambil konten dari URL.';
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -193,7 +192,7 @@ if ($data !== false) {
                            <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
                         </p>
                         <hr>
-                        <form action="https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/laporan" method="POST">
+                        <form action="laporan.php" method="POST">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name" required>
@@ -221,7 +220,7 @@ if ($data !== false) {
                            <div class="btn-form">
                               <input type="hidden" name="id_tugas" value="5">
                               <input type="hidden" name="id_user" value="<?= $user_id ?>">
-                              <button class="learn-more">
+                              <button class="learn-more" type="submit">
                                  <span class="circle" aria-hidden="true">
                                     <span class="icon arrow"></span>
                                  </span>
