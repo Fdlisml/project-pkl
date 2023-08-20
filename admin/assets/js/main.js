@@ -8,7 +8,7 @@ function activeLink() {
   this.classList.add("hovered");
 }
 
-list.forEach((item) => item.addEventListener("mouseover", activeLink));
+list.forEach((item) => item.addEventListener("mouser", activeLink));
 
 // Menu Toggle
 let toggle = document.querySelector(".toggle");
