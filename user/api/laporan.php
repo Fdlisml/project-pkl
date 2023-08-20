@@ -51,10 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    }elseif (isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
       $laporanId = $_POST['id_laporan'];
       $urlDelete = $url . $laporanId;
-      $data = array(
-         "id_laporan" => $laporanId
-      );
-      sendRequest($urlDelete, 'DELETE', $data);
+      sendRequest($urlDelete, 'DELETE');
    }else {
       $data = array(
          "nama_laporan" => $_POST['nama_laporan'],
