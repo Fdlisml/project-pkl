@@ -10,8 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
 
-require_once 'laporan.php';
-$data_laporan = $data['data_laporan'];
+require_once 'api/laporan.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">

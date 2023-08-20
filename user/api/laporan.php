@@ -26,15 +26,19 @@ function sendRequest($url, $method, $data = null)
 
    if ($response === false) {
       echo "Error: " . curl_error($ch);
-   } else {
-      // echo "{$method} Response: " . $response;
+   }else{
+      if($method !== 'GET'){
+         echo $response;
+      }else{
+         // echo json_encode(["message" => "Laporan founded"]);
+      }
    }
 
    curl_close($ch);
-   return $response; // Mengembalikan respons untuk pengolahan selanjutnya
+   return $response;
 }
 
-$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/";
+$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/laporan.php/";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    if (isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
@@ -44,7 +48,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
          "progres" => $_POST['progres'],
       );
       sendRequest($urlUpdate, 'PUT', $data);
-   } else {
+   }elseif (isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
+      $laporanId = $_POST['id_laporan'];
+      $urlDelete = $url . $laporanId;
+      $data = array(
+         "id_laporan" => $laporanId
+      );
+      sendRequest($urlDelete, 'DELETE', $data);
+   }else {
       $data = array(
          "nama_laporan" => $_POST['nama_laporan'],
          "deskripsi" => $_POST['deskripsi'],
@@ -63,6 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    if ($data === null) {
       echo "Error decoding JSON: " . json_last_error_msg();
    } else {
-      json_encode($data);
+      $jsonData = json_encode($data);
+      $data_laporan = $data['data_laporan'];
    }
 }

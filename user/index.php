@@ -11,24 +11,31 @@ $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
 
 $url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/data_tugas.php';
-$data = file_get_contents($url);
+
+$ch = curl_init($url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$data = curl_exec($ch);
 
 if ($data !== false) {
-   $result = json_decode($data, true);
-   if ($result !== null) {
-      if (array_key_exists('data_tugas', $result)) {
-         $data_tugas = $result['data_tugas'];
-         $randomIndex = array_rand($data_tugas);
-         $data_tugas = $data_tugas[$randomIndex];
-      } else {
-         echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
-      }
-   } else {
-      echo 'Gagal menguraikan data JSON.';
-   }
+    $result = json_decode($data, true);
+    if ($result !== null) {
+        if (array_key_exists('data_tugas', $result)) {
+            $data_tugas = $result['data_tugas'];
+            $randomIndex = array_rand($data_tugas);
+            $data_tugas = $data_tugas[$randomIndex];
+        } else {
+            echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
+        }
+    } else {
+        echo 'Gagal menguraikan data JSON.';
+    }
 } else {
-   echo 'Gagal mengambil konten dari URL.';
+    echo 'Gagal mengambil konten menggunakan cURL: ' . curl_error($ch);
 }
+
+curl_close($ch);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,7 +199,7 @@ if ($data !== false) {
                            <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
                         </p>
                         <hr>
-                        <form action="laporan.php" method="POST">
+                        <form action="api/laporan.php" method="POST">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
                               <input type="text" name="nama_laporan" placeholder="Enter a Report Name" required>
