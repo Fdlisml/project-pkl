@@ -1,31 +1,48 @@
 <?php
-include 'config/database.php';
-
 session_start();
 
-function login($username, $password, $conn)
+function sendRequest($url, $method)
 {
-   $username = mysqli_real_escape_string($conn, $username);
-   $password = mysqli_real_escape_string($conn, $password);
+   $ch = curl_init();
+   $headers = array(
+      'Content-Type: application/json'
+   );
 
-   $query = mysqli_query($conn, "SELECT * FROM tb_user WHERE username='$username' AND password='$password'");
-   $user = mysqli_fetch_assoc($query);
+   $options = array(
+      CURLOPT_URL => $url,
+      CURLOPT_RETURNTRANSFER => true,
+      CURLOPT_CUSTOMREQUEST => $method,
+      CURLOPT_HTTPHEADER => $headers
+   );
 
-   if ($user) {
-      $_SESSION['user_id'] = $user['id'];
-      $_SESSION['username'] = $user['username'];
-      $_SESSION['name'] = $user['name'];
-      return true;
-   } else {
-      return false;
+   curl_setopt_array($ch, $options);
+
+   $response = curl_exec($ch);
+
+   if ($response === false) {
+      echo "Error: " . curl_error($ch);
    }
-}
 
+   curl_close($ch);
+   return $response;
+}
 if (isset($_POST['login'])) {
    $username = $_POST['username'];
    $password = $_POST['password'];
+   $url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/user.php?username=$username&password=$password";
+   $response = sendRequest($url, 'GET');
+   $data = json_decode($response, true);
 
-   if (login($username, $password, $conn)) {
+   if ($data === null) {
+      echo "Error decoding JSON: " . json_last_error_msg();
+   } else {
+      $jsonData = json_encode($data);
+      $user = $data['data_user'];
+      $_SESSION['user_id'] = $user['id'];
+      $_SESSION['username'] = $user['username'];
+      $_SESSION['name'] = $user['name'];
+   }
+   if ($user['username'] === $username && $user['password'] === $password) {
       header('location:index.php');
       exit();
    } else {
@@ -61,9 +78,8 @@ if (isset($_POST['login'])) {
             <h2>Sign In,</h2>
 
             <div class="img-mobile">
-            <img src="public/image/Two factor authentication-pana.png" alt="login-mobile">
+               <img src="public/image/Two factor authentication-pana.png" alt="login-mobile">
             </div>
-
 
             <form method="post">
                <label for="">Username</label><br>

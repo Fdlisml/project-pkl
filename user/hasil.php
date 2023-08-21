@@ -1,5 +1,5 @@
 <?php
-require_once 'config/database.php';
+
 session_start();
 
 if (!isset($_SESSION['user_id'])) {
@@ -10,8 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 $name = $_SESSION['name'];
 
-require_once 'laporan.php';
-$data_laporan = $data['data_laporan'];
+require_once 'api/laporan.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -111,7 +110,7 @@ $data_laporan = $data['data_laporan'];
                                     <td>Keluhan</td>
                                     <td><?= $laporan["keluhan"] ?></td>
                                  </tr>
-                                 <form action="laporan.php" method="POST">
+                                 <form action="api/laporan.php" method="POST">
                                     <tr>
                                        <td>Progres</td>
                                        <td>
