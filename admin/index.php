@@ -8,9 +8,7 @@ $name = $_SESSION['name'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-
-
-
+require_once 'api/project.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,7 +100,7 @@ if (!isset($user_id)) {
                         </div>
 
                         <div class="form">
-                            <form action="" method="post">
+                            <form action="api/project.php" method="post">
                                 <label for="nama_project">
                                     Nama Project <input type="text" name="nama_project">
                                 </label>
@@ -129,79 +127,28 @@ if (!isset($user_id)) {
                             <h2>Data Project</h2>
                         </div>
 
-                        <table>
+                    <table>
+                        <thead>
                             <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
+                                <th>NAMA PROJECT</th>
+                                <th>TUGAS</th>
+                                <th>DESKRIPSI</th>
+                                <th>TANGGAL MULAI</th>
+                                <th>TANGGAL SELESAI</th>
                             </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>David <br> <span>Italy</span></h4>
-                                </td>
-                            </tr>
-
-                            <tr>
-                                <td width="60px">
-                                    <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                                </td>
-                                <td>
-                                    <h4>Amit <br> <span>India</span></h4>
-                                </td>
-                            </tr>
-                        </table>
+                            <?php foreach ($data_project as $project) : ?>
+                            <div class="wadah-table">
+                                <tr>
+                                    <td><?= $project["nama_project"] ?></td>
+                                    <td><?= $project["tugas"] ?></td>
+                                    <td><?= $project["deskripsi"] ?></td>
+                                    <td><?= $project["tgl_mulai"] ?></td>
+                                    <td><?= $project["tgl_selesai"] ?></td>
+                                </tr>
+                            </div>
+                            <?php endforeach ?>
+                        </thead>
+                    </table>
                     </div>
                 </div>
             </div>

@@ -38,29 +38,27 @@ function sendRequest($url, $method, $data = null)
    return $response;
 }
 
-$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/laporan.php/";
+$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/project.php/";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    if (isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
-      $laporanId = $_POST['id_laporan'];
-      $urlUpdate = $url . $laporanId;
+      $projectId = $_POST['id_project'];
+      $urlUpdate = $url . $projectId;
       $data = array(
          "progres" => $_POST['progres'],
       );
       sendRequest($urlUpdate, 'PUT', $data);
    }elseif (isset($_POST['_method']) && $_POST['_method'] === 'DELETE') {
-      $laporanId = $_POST['id_laporan'];
-      $urlDelete = $url . $laporanId;
+      $projectId = $_POST['id_project'];
+      $urlDelete = $url . $projectId;
       sendRequest($urlDelete, 'DELETE');
    }else {
       $data = array(
-         "nama_laporan" => $_POST['nama_laporan'],
-         "deskripsi" => $_POST['deskripsi'],
-         "keluhan" => $_POST['keluhan'],
-         "progres" => $_POST['progres'],
-         "tgl_laporan" => date("Y-m-d"),
-         "id_tugas" => $_POST['id_tugas'],
-         "id_user" => $_POST['id_user']
+         "nama_project" => $_POST['nama_project'],
+         "tugas" => $_POST['tugas'],
+         "deskripsi" => $_POST['deksripsi'],
+         "tgl_mulai" => $_POST['tgl_mulai'],
+         "tgl_selesai" => $_POST['tgl_selesai'],
       );
       sendRequest($url, 'POST', $data);
    }
@@ -72,6 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       echo "Error decoding JSON: " . json_last_error_msg();
    } else {
       $jsonData = json_encode($data);
-      $data_laporan = $data['data_laporan'];
+      $data_project = $data['data_project'];
    }
 }

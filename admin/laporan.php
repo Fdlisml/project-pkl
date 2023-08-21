@@ -8,8 +8,7 @@ $name = $_SESSION['name'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-require_once '../user/laporan.php';
-$data_laporan = $data['data_laporan'];
+require_once '../user/api/laporan.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
