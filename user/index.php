@@ -111,17 +111,19 @@ curl_close($ch);
 
             <!-- ======================= Cards ================== -->
             <div class="cardBox">
-               <div class="card">
-                  <div>
-                     <div class="say">Good Morning, <?= $name ?></div>
-                     <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
-                     <div id="txt"></div>
-                     <div class="left2">
-                        <p id="day"></p>
-                        <p id="date"></p>/
-                        <p id="month"></p>
-                        <p></p>
-                        <p id="year"></p>
+               <div class="card1">
+                  <div class="card-left">
+                     <div>
+                        <div class="say">Good Morning, <?= $name ?></div>
+                        <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
+                        <div id="txt"></div>
+                        <div class="left2">
+                           <p id="day"></p>
+                           <p id="date"></p>/
+                           <p id="month"></p>
+                           <p></p>
+                           <p id="year"></p>
+                        </div>
                      </div>
                   </div>
 
@@ -130,7 +132,7 @@ curl_close($ch);
                   </div>
                </div>
 
-               <div class="card">
+               <div class="card2">
                   <div class="container2">
                      <div class="cloud front">
                         <span class="left-front"></span>
