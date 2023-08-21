@@ -34,7 +34,7 @@ function sendRequest($url, $method, $data = null)
    return $response; // Mengembalikan respons untuk pengolahan selanjutnya
 }
 
-$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api.php/";
+$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/laporan.php/";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
    if (isset($_POST['_method']) && $_POST['_method'] === 'PUT') {
