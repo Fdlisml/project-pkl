@@ -8,8 +8,8 @@ $name = $_SESSION['name'];
 if (!isset($user_id)) {
     header('location:login.php');
 }
-
-
+require_once '../user/laporan.php';
+$data_laporan = $data['data_laporan'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +20,7 @@ if (!isset($user_id)) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/laporan.css">
 </head>
 
 <body>
@@ -120,79 +120,23 @@ if (!isset($user_id)) {
                     <div class="cardHeader">
                         <h2>Data Laporan</h2>
                     </div>
-
                     <table>
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer01.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>David <br> <span>Italy</span></h4>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td width="60px">
-                                <div class="imgBx"><img src="assets/imgs/customer02.jpg" alt=""></div>
-                            </td>
-                            <td>
-                                <h4>Amit <br> <span>India</span></h4>
-                            </td>
-                        </tr>
+                        <thead>
+                            <tr>
+                                <th>NAMA LAPORAN</th>
+                                <th>DESKRIPSI</th>
+                                <th>TANGGAL LAPORAN</th>
+                            </tr>
+                            <?php foreach ($data_laporan as $laporan) : ?>
+                            <div class="wadah-table">
+                                <tr>
+                                    <td><?= $laporan["nama_laporan"] ?></td>
+                                    <td><?= $laporan["deskripsi"] ?></td>
+                                    <td><?= $laporan["tgl_laporan"] ?></td>
+                                </tr>
+                            </div>
+                            <?php endforeach ?>
+                        </thead>
                     </table>
                 </div>
             </div>

@@ -53,7 +53,7 @@ if (!isset($user_id)) {
                         <span class="icon">
                             <ion-icon name="folder-open-outline"></ion-icon>
                         </span>
-                        <span class="title">Laporan</span>
+                        <span class="title">Report</span>
                     </a>
                 </li>
 
@@ -62,7 +62,7 @@ if (!isset($user_id)) {
                         <span class="icon">
                             <ion-icon name="reader-outline"></ion-icon>
                         </span>
-                        <span class="title">Tugas</span>
+                        <span class="title">Work</span>
                     </a>
                 </li>
 
