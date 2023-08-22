@@ -440,7 +440,7 @@ body {
 }
 .recentCustomers table tr td {
   padding: 12px 10px;
-  width: 30%;
+  width: 30%; 
 }
 .recentCustomers table tr td h4 {
   font-size: 16px;
