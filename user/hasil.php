@@ -2,15 +2,15 @@
 
 session_start();
 
-if (!isset($_SESSION['id_user'])) {
-   header('Location: login.php');
+if (!isset($_SESSION['id_user']) || (isset($_SESSION['role']) && $_SESSION['role'] !== "user")) {
+   header('Location: ../login.php');
    exit;
 }
 
 $id_user = $_SESSION['id_user'];
 $name = $_SESSION['name'];
 
-require_once 'api/laporan.php';
+require_once '../api/laporan.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +41,7 @@ require_once 'api/laporan.php';
             </li>
             <li><a href="index.php"><span class="icon"><ion-icon name="reader-outline"></ion-icon></span><span class="title">Work</span></a></li>
             <li><a href="#"><span class="icon"><ion-icon name="checkmark-done-outline"></ion-icon></span><span class="title">Working Result</span></a></li>
-            <li><a href="logout.php"><span class="icon"><ion-icon name="log-out-outline"></ion-icon></span><span class="title">Sign Out</span></a></li>
+            <li><a href="../logout.php"><span class="icon"><ion-icon name="log-out-outline"></ion-icon></span><span class="title">Sign Out</span></a></li>
          </ul>
       </div>
 

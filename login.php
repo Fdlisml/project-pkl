@@ -10,19 +10,21 @@ if (isset($_POST['login'])) {
    $response = sendRequest($url, 'GET');
    $data = json_decode($response, true);
 
-   if ($data === null) {
-      echo "Error decoding JSON: " . json_last_error_msg();
-   } else {
+   if($data !== null){
       $jsonData = json_encode($data);
       $user = $data['data_user'];
       $_SESSION['id_user'] = $user['id'];
       $_SESSION['username'] = $user['username'];
       $_SESSION['name'] = $user['name'];
-   }
-   if ($user['username'] === $username && $user['password'] === $password) {
-      header('location:index.php');
-      exit();
-   } else {
+      $_SESSION['role'] = $user['role'];
+      if($user['role'] === "user"){
+         header('location:user/index.php');
+         exit();
+      }elseif($user['role'] === "admin"){
+         header('location:admin/index.php');
+         exit();
+      }
+   }else{
       $error = '<script>alert("Username atau password salah!");</script>';
       echo $error;
    }
@@ -34,7 +36,7 @@ if (isset($_POST['login'])) {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="public/css/login.css">
+   <link rel="stylesheet" href="user/public/css/login.css">
 
    <title>Login Page</title>
 </head>
@@ -45,7 +47,7 @@ if (isset($_POST['login'])) {
 
       <div class="left">
          <div class="wadah-img">
-            <img src="public/image/Two factor authentication-pana.png" alt="login">
+            <img src="user/public/image/Two factor authentication-pana.png" alt="login">
          </div>
       </div>
 
@@ -55,7 +57,7 @@ if (isset($_POST['login'])) {
             <h2>Sign In,</h2>
 
             <div class="img-mobile">
-               <img src="public/image/Two factor authentication-pana.png" alt="login-mobile">
+               <img src="user/public/image/Two factor authentication-pana.png" alt="login-mobile">
             </div>
 
             <form method="post">
@@ -81,7 +83,7 @@ if (isset($_POST['login'])) {
 
    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-   <script src="public/js/login.js"></script>
+   <script src="user/public/js/login.js"></script>
 </body>
 
 </html>

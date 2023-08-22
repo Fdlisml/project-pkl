@@ -2,8 +2,8 @@
 
 session_start();
 
-if (!isset($_SESSION['id_user'])) {
-   header('Location: login.php');
+if (!isset($_SESSION['id_user']) || (isset($_SESSION['role']) && $_SESSION['role'] !== "user")) {
+   header('Location: ../login.php');
    exit;
 }
 
@@ -86,7 +86,7 @@ curl_close($ch);
             </li>
 
             <li>
-               <a href="logout.php">
+               <a href="../logout.php">
                   <span class="icon">
                      <ion-icon name="log-out-outline"></ion-icon>
                   </span>

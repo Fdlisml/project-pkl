@@ -2,13 +2,15 @@
 
 session_start();
 
-$user_id = $_SESSION['user_id'];
+if (!isset($_SESSION['id_user']) || (isset($_SESSION['role']) && $_SESSION['role'] !== "admin")) {
+   header('Location: ../login.php');
+   exit;
+}
+
+$id_user = $_SESSION['id_user'];
 $name = $_SESSION['name'];
 
-if (!isset($user_id)) {
-   header('location:login.php');
-}
-require_once '../user/api/laporan.php';
+require_once '../api/laporan.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -66,7 +68,7 @@ require_once '../user/api/laporan.php';
             </li>
 
             <li>
-               <a href="logout.phps">
+               <a href="../logout.php">
                   <span class="icon">
                      <ion-icon name="log-out-outline"></ion-icon>
                   </span>
