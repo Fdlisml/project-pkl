@@ -1,31 +1,8 @@
 <?php
 session_start();
 
-function sendRequest($url, $method)
-{
-   $ch = curl_init();
-   $headers = array(
-      'Content-Type: application/json'
-   );
+require_once 'api/sendRequest.php';
 
-   $options = array(
-      CURLOPT_URL => $url,
-      CURLOPT_RETURNTRANSFER => true,
-      CURLOPT_CUSTOMREQUEST => $method,
-      CURLOPT_HTTPHEADER => $headers
-   );
-
-   curl_setopt_array($ch, $options);
-
-   $response = curl_exec($ch);
-
-   if ($response === false) {
-      echo "Error: " . curl_error($ch);
-   }
-
-   curl_close($ch);
-   return $response;
-}
 if (isset($_POST['login'])) {
    $username = $_POST['username'];
    $password = $_POST['password'];
