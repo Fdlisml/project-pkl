@@ -110,6 +110,12 @@ require_once 'api/project.php';
                         <label for="deskripsi">
                            Deskripsi <input type="text" name="deskripsi">
                         </label>
+                        <label for="tgl_mulai">
+                           tugas <input type="date" name="tgl_mulai">
+                        </label>
+                        <label for="tgl_selesai">
+                           tugas <input type="date" name="tgl_selesai">
+                        </label>
                         <button class="cta">
                            <span>Send Work !</span>
                            <svg viewBox="0 0 13 10" height="10px" width="15px">
