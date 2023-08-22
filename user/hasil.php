@@ -51,27 +51,35 @@ require_once 'api/laporan.php';
                <div class="toggle">
                   <ion-icon name="menu-outline"></ion-icon>
                </div>
-               <div class="user">
+
+               <!-- <div class="user">
                   <img src="public/image/customer01.jpg" alt="">
-               </div>
+               </div> -->
             </div>
 
             <div class="cardBox">
-               <div class="card">
-                  <div>
-                     <div class="say">Good Morning, <?= $name ?></div>
-                     <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
-                     <div id="txt"></div>
-                     <div class="left2">
-                        <p id="day"></p>
-                        <p id="date"></p>/<p id="month"></p>/<p id="year"></p>
+               <div class="card1">
+                  <div class="card-left">
+                     <div class="container-text">
+                        <div class="say">Good Morning, <?= $name ?></div>
+                        <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
+                        <div id="txt"></div>
+                        <div class="left2">
+                           <p id="day"></p>
+                           <p id="date"></p>/
+                           <p id="month"></p>
+                           <p></p>
+                           <p id="year"></p>
+                        </div>
                      </div>
                   </div>
+
                   <div class="imgBx">
                      <img src="public/image/Telecommuting-pana-removebg-preview.png">
                   </div>
                </div>
-               <div class="card">
+
+               <div class="card2">
                   <div class="container2">
                      <div class="cloud front">
                         <span class="left-front"></span>
@@ -84,6 +92,7 @@ require_once 'api/laporan.php';
                         <span class="right-back"></span>
                      </div>
                   </div>
+
                </div>
             </div>
 

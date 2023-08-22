@@ -18,20 +18,20 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 $data = curl_exec($ch);
 
 if ($data !== false) {
-    $result = json_decode($data, true);
-    if ($result !== null) {
-        if (array_key_exists('data_tugas', $result)) {
-            $data_tugas = $result['data_tugas'];
-            $randomIndex = array_rand($data_tugas);
-            $data_tugas = $data_tugas[$randomIndex];
-        } else {
-            echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
-        }
-    } else {
-        echo 'Gagal menguraikan data JSON.';
-    }
+   $result = json_decode($data, true);
+   if ($result !== null) {
+      if (array_key_exists('data_tugas', $result)) {
+         $data_tugas = $result['data_tugas'];
+         $randomIndex = array_rand($data_tugas);
+         $data_tugas = $data_tugas[$randomIndex];
+      } else {
+         echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
+      }
+   } else {
+      echo 'Gagal menguraikan data JSON.';
+   }
 } else {
-    echo 'Gagal mengambil konten menggunakan cURL: ' . curl_error($ch);
+   echo 'Gagal mengambil konten menggunakan cURL: ' . curl_error($ch);
 }
 
 curl_close($ch);
@@ -104,16 +104,16 @@ curl_close($ch);
                   <ion-icon name="menu-outline"></ion-icon>
                </div>
 
-               <div class="user">
+               <!-- <div class="user">
                   <img src="public/image/customer01.jpg" alt="">
-               </div>
+               </div> -->
             </div>
 
             <!-- ======================= Cards ================== -->
             <div class="cardBox">
                <div class="card1">
                   <div class="card-left">
-                     <div>
+                     <div class="container-text">
                         <div class="say">Good Morning, <?= $name ?></div>
                         <div class="desc">Selamat Mengerjakan Pekerjaannya. Semangat!</div>
                         <div id="txt"></div>
