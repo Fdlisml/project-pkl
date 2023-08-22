@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $data = array(
          "nama_project" => $_POST['nama_project'],
          "tugas" => $_POST['tugas'],
-         "deskripsi" => $_POST['deksripsi'],
+         "deskripsi" => $_POST['deskripsi'],
          "tgl_mulai" => $_POST['tgl_mulai'],
          "tgl_selesai" => $_POST['tgl_selesai'],
       );
