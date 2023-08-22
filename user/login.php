@@ -15,7 +15,7 @@ if (isset($_POST['login'])) {
    } else {
       $jsonData = json_encode($data);
       $user = $data['data_user'];
-      $_SESSION['user_id'] = $user['id'];
+      $_SESSION['id_user'] = $user['id'];
       $_SESSION['username'] = $user['username'];
       $_SESSION['name'] = $user['name'];
    }

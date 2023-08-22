@@ -2,12 +2,12 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id_user'])) {
    header('Location: login.php');
    exit;
 }
 
-$user_id = $_SESSION['user_id'];
+$id_user = $_SESSION['id_user'];
 $name = $_SESSION['name'];
 
 require_once 'api/laporan.php';

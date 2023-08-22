@@ -2,15 +2,15 @@
 
 session_start();
 
-if (!isset($_SESSION['user_id'])) {
+if (!isset($_SESSION['id_user'])) {
    header('Location: login.php');
    exit;
 }
 
-$user_id = $_SESSION['user_id'];
+$id_user = $_SESSION['id_user'];
 $name = $_SESSION['name'];
 
-$url = 'https://klikyuk.com/ngankngonk/fadli/project-pkl/api/tugas.php/';
+$url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/tugas.php?id_user=$id_user";
 
 $ch = curl_init($url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -228,7 +228,7 @@ curl_close($ch);
                            </div>
                            <div class="btn-form">
                               <input type="hidden" name="id_tugas" value="5">
-                              <input type="hidden" name="id_user" value="<?= $user_id ?>">
+                              <input type="hidden" name="id_user" value="<?= $id_user ?>">
                               <button class="learn-more" type="submit">
                                  <span class="circle" aria-hidden="true">
                                     <span class="icon arrow"></span>
