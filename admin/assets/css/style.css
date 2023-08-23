@@ -266,7 +266,7 @@ body {
 
 .details .recentOrders {
   position: relative;
-  max-height: 100vh;
+  max-height: 110vh;
   background: var(--white);
   padding: 20px;
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
@@ -398,7 +398,7 @@ form {
   overflow-y: auto;
   position: relative;
   display: grid;
-  max-height: 100vh;
+  max-height: 110vh;
   padding: 20px;
   background: var(--white);
   box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);

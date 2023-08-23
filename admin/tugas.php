@@ -33,12 +33,14 @@ require_once '../api/user.php';
          <ul>
             <li>
                <a href="#">
-                  <span class="icon">
-                     <div class="logo-bg">
-                        <img src="assets/imgs/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
-                     </div>
-                  </span>
-                  <span class="title">Work Assigner</span>
+                  <div class="logo-flex">
+                     <span class="icon">
+                        <div class="logo-bg">
+                           <img src="assets/imgs/building-logo-icon-design-template-vector_67715-555-transformed-removebg-preview.png" alt="">
+                        </div>
+                     </span>
+                     <span class="title">WorkAssigner</span>
+                  </div>
                </a>
             </li>
 
