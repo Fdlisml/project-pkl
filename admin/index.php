@@ -102,7 +102,7 @@ require_once '../api/project.php';
                   </div>
 
                   <div class="form">
-                     <form action="api/project.php" method="post">
+                     <form action="../api/project.php" method="post">
                         <label for="nama_project">
                            Nama Project
                         </label>

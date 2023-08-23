@@ -105,7 +105,7 @@ require_once '../api/user.php';
                   </div>
 
                   <div class="form">
-                     <form action="api/tugas.php" method="POST">
+                     <form action="../api/tugas.php" method="POST">
                         <label for="tugas">
                            tugas <input type="text" name="nama_tugas">
                         </label>
