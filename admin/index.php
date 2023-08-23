@@ -88,9 +88,9 @@ require_once '../api/project.php';
                   <ion-icon name="menu-outline"></ion-icon>
                </div>
 
-               <div class="user">
+               <!-- <div class="user">
                   <img src="public/image/customer01.jpg" alt="">
-               </div>
+               </div> -->
             </div>
 
             <!-- ================ Order Details List ================= -->
@@ -104,20 +104,30 @@ require_once '../api/project.php';
                   <div class="form">
                      <form action="api/project.php" method="post">
                         <label for="nama_project">
-                           Nama Project <input type="text" name="nama_project">
+                           Nama Project
                         </label>
+                        <input type="text" name="nama_project">
+
                         <label for="tugas">
-                           tugas <input type="text" name="tugas">
+                           Tugas
                         </label>
+                        <input type="text" name="tugas">
+
                         <label for="deskripsi">
-                           Deskripsi <input type="text" name="deskripsi">
+                           Deskripsi
                         </label>
-                        <label for="tgl_mulai">
-                           tugas <input type="date" name="tgl_mulai">
+                        <input type="text" name="deskripsi">
+
+                        <label for="tgl_mulai"><br>
+                           Tgl Mulai
                         </label>
+                        <input type="date" name="tgl_mulai">
+
                         <label for="tgl_selesai">
-                           tugas <input type="date" name="tgl_selesai">
+                           Tgl Selesai
                         </label>
+                        <input type="date" name="tgl_selesai">
+
                         <button class="cta">
                            <span>Send Work !</span>
                            <svg viewBox="0 0 13 10" height="10px" width="15px">
