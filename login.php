@@ -10,8 +10,10 @@ if (isset($_POST['login'])) {
    $response = sendRequest($url, 'GET');
    $data = json_decode($response, true);
 
-   if($data !== null){
-      $jsonData = json_encode($data);
+   if(!isset($data['data_user'])){
+      $error = '<script>alert("Username atau password salah!");</script>';
+      echo $error;
+   }else{
       $user = $data['data_user'];
       $_SESSION['id_user'] = $user['id'];
       $_SESSION['username'] = $user['username'];
@@ -24,9 +26,6 @@ if (isset($_POST['login'])) {
          header('location:admin/index.php');
          exit();
       }
-   }else{
-      $error = '<script>alert("Username atau password salah!");</script>';
-      echo $error;
    }
 }
 ?>
