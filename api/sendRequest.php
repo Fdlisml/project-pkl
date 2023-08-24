@@ -36,4 +36,3 @@ function sendRequest($url, $method, $data = null)
    curl_close($ch);
    return $response;
 }
-?>
