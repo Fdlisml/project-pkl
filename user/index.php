@@ -10,31 +10,21 @@ if (!isset($_SESSION['id_user']) || (isset($_SESSION['role']) && $_SESSION['role
 $id_user = $_SESSION['id_user'];
 $name = $_SESSION['name'];
 
+require_once '../api/sendRequest.php';
+
 $url = "https://klikyuk.com/ngankngonk/fadli/project-pkl/api/tugas.php?id_user=$id_user";
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+$response = sendRequest($url, 'GET');
+$data = json_decode($response, true);
 
-$data = curl_exec($ch);
-
-if ($data !== false) {
-   $result = json_decode($data, true);
-   if ($result !== null) {
-      if (array_key_exists('data_tugas', $result)) {
-         $data_tugas = $result['data_tugas'];
-         $randomIndex = array_rand($data_tugas);
-         $data_tugas = $data_tugas[$randomIndex];
-      } else {
-         echo 'Key "data_tugas" tidak ditemukan dalam respons JSON.';
-      }
-   } else {
-      echo 'Gagal menguraikan data JSON.';
-   }
+if ($data === null) {
+   echo "Error decoding JSON: " . json_last_error_msg();
 } else {
-   echo 'Gagal mengambil konten menggunakan cURL: ' . curl_error($ch);
+   $jsonData = json_encode($data);
+   $data_tugas = $data['data_tugas'];
+   $randomIndex = array_rand($data_tugas);
+   $data_tugas = $data_tugas[$randomIndex];
 }
-
-curl_close($ch);
 
 ?>
 <!DOCTYPE html>
@@ -201,10 +191,10 @@ curl_close($ch);
                            <ion-icon name="business-outline"></ion-icon><span>Job Management</span>
                         </p>
                         <hr>
-                        <form action="api/laporan.php" method="POST">
+                        <form action="../api/laporan.php" method="POST">
                            <div class="center-form">
                               <label for="">Nama Laporan</label><br>
-                              <input type="text" name="nama_laporan" placeholder="Enter a Report Name" required>
+                              <input type="text" name="nama_laporan" placeholder="Masukan Nama Laporan" required>
                               <br>
                               <br>
                               <label for="">Deskripsi Laporan</label><br>
@@ -227,7 +217,7 @@ curl_close($ch);
                               </div>
                            </div>
                            <div class="btn-form">
-                              <input type="hidden" name="id_tugas" value="5">
+                              <input type="hidden" name="id_tugas" value="<?= $data_tugas['id']?>">
                               <input type="hidden" name="id_user" value="<?= $id_user ?>">
                               <button class="learn-more" type="submit">
                                  <span class="circle" aria-hidden="true">

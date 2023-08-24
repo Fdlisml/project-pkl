@@ -129,6 +129,8 @@ require_once '../api/laporan.php';
                         <th>NAMA LAPORAN</th>
                         <th>DESKRIPSI</th>
                         <th>TANGGAL LAPORAN</th>
+                        <th>ID TUGAS</th>
+                        <th>ID USER</th>
                      </tr>
                      <?php foreach ($data_laporan as $laporan) : ?>
                         <div class="wadah-table">
@@ -136,6 +138,8 @@ require_once '../api/laporan.php';
                               <td><?= $laporan["nama_laporan"] ?></td>
                               <td><?= $laporan["deskripsi"] ?></td>
                               <td><?= $laporan["tgl_laporan"] ?></td>
+                              <td><?= $laporan["id_tugas"] ?></td>
+                              <td><?= $laporan["id_user"] ?></td>
                            </tr>
                         </div>
                      <?php endforeach ?>
