@@ -89,35 +89,12 @@ require_once '../api/laporan.php';
                </div>
 
                <div class="user">
-                  <img src="public/image/customer01.jpg" alt="">
+                  <img src="">
                </div>
             </div>
 
 
-            <!-- ================ Order Details List ================= -->
-            <!-- <div class="details">
-                <div class="recentOrders">
-                    <div class="cardHeader">
-                        <h2>Data Project</h2>
-                        <a href="#" class="btn">View All</a>
-                    </div>
-
-                    <div class="form">
-                        <form action="" method="post">
-                            <label for="nama_project">
-                                Nama Project <input type="text" name="nama_project">
-                            </label>
-                            <label for="tugas">
-                                tugas <input type="text" name="">
-                            </label>
-                            <label for="deskripsi">
-                                Deskripsi <input type="text" name="deskripsi">
-                            </label>
-                            <input type="submit" name="submit" value="Kirim !">
-                        </form>
-                    </div>
-                </div> -->
-
+          
             <!-- ================= New Customers ================ -->
             <div class="recentCustomers">
                <div class="cardHeader">

@@ -84,7 +84,7 @@ form label {
 
 form input {
     height: 30px;
-    width: 220px;
+    width: 100%;
     /* border-radius: 10px; */
     outline: none;
     border: 2px solid #d4d1d1;
@@ -100,7 +100,6 @@ form input::placeholder {
 }
 
 .boxx {
-    width: 245px;
     padding: 10px 10px;
     border: 2px solid #d4d1d1;
     outline: 0;
@@ -117,7 +116,6 @@ form input.user {
 }
 
 .box {
-    width: 245px;
     padding: 10px;
     border: 2px solid #d4d1d1;
     outline: 0;
@@ -193,10 +191,16 @@ form input.pw {
         border-radius: 20px;
         /* height: 80vh; */
         height: 530px;
+        /* height: 65%; */
     }
 
     .container .right .img-mobile {
         display: flex;
+        width: 100%;
+    }
+
+    .container .right .img-mobile img {
+        width: 100%;
     }
 
     form {
@@ -206,4 +210,20 @@ form input.pw {
     .btn input {
         margin-top: 10px;
     }
+}
+
+@media (max-width: 320px) {
+
+    .right {
+        /* position: relative; */
+        /* height: 80vh; */
+        height: 500px;
+        /* height: 100%; */
+    }
+
+    .container .right .img-mobile {
+        display: flex;
+        width: 100%;
+    }
+
 }

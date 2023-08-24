@@ -10,19 +10,19 @@ if (isset($_POST['login'])) {
    $response = sendRequest($url, 'GET');
    $data = json_decode($response, true);
 
-   if(!isset($data['data_user'])){
+   if (!isset($data['data_user'])) {
       $error = '<script>alert("Username atau password salah!");</script>';
       echo $error;
-   }else{
+   } else {
       $user = $data['data_user'];
       $_SESSION['id_user'] = $user['id'];
       $_SESSION['username'] = $user['username'];
       $_SESSION['name'] = $user['name'];
       $_SESSION['role'] = $user['role'];
-      if($user['role'] === "user"){
+      if ($user['role'] === "user") {
          header('location:user/index.php');
          exit();
-      }elseif($user['role'] === "admin"){
+      } elseif ($user['role'] === "admin") {
          header('location:admin/index.php');
          exit();
       }
