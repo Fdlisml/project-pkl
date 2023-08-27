@@ -94,7 +94,7 @@ require_once '../api/laporan.php';
             </div>
 
 
-          
+
             <!-- ================= New Customers ================ -->
             <div class="recentCustomers">
                <div class="cardHeader">
@@ -109,18 +109,21 @@ require_once '../api/laporan.php';
                         <th>ID TUGAS</th>
                         <th>ID USER</th>
                      </tr>
-                     <?php foreach ($data_laporan as $laporan) : ?>
-                        <div class="wadah-table">
-                           <tr>
-                              <td><?= $laporan["nama_laporan"] ?></td>
-                              <td><?= $laporan["deskripsi"] ?></td>
-                              <td><?= $laporan["tgl_laporan"] ?></td>
-                              <td><?= $laporan["id_tugas"] ?></td>
-                              <td><?= $laporan["id_user"] ?></td>
-                           </tr>
-                        </div>
-                     <?php endforeach ?>
                   </thead>
+
+                  <tbody>
+                  <?php foreach ($data_laporan as $laporan) : ?>
+                     <div class="wadah-table">
+                        <tr>
+                           <td><?= $laporan["nama_laporan"] ?></td>
+                           <td><?= $laporan["deskripsi"] ?></td>
+                           <td><?= $laporan["tgl_laporan"] ?></td>
+                           <td><?= $laporan["id_tugas"] ?></td>
+                           <td><?= $laporan["id_user"] ?></td>
+                        </tr>
+                     </div>
+                  <?php endforeach ?>
+                  </tbody>
                </table>
             </div>
          </div>
