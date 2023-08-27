@@ -119,7 +119,7 @@ require_once '../api/laporan.php';
                                     <td>Keluhan</td>
                                     <td><?= $laporan["keluhan"] ?></td>
                                  </tr>
-                                 <form action="api/laporan.php" method="POST">
+                                 <form action="../api/laporan.php" method="POST">
                                     <tr>
                                        <td>Progres</td>
                                        <td>
