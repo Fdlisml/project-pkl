@@ -109,11 +109,6 @@ body {
    width: 40px;
 }
 
-
-.navigation .logo-bg img {
-   width: 40px;
-}
-
 .navigation ul li ion-icon {
    font-size: 1.5rem;
 }
@@ -141,6 +136,7 @@ body {
    border-radius: 50%;
    box-shadow: 35px 35px 0 10px var(--white);
    pointer-events: none;
+   transition: .3s;
 }
 
 .navigation ul li:hover a::after,
@@ -155,6 +151,7 @@ body {
    border-radius: 50%;
    box-shadow: 35px -35px 0 10px var(--white);
    pointer-events: none;
+   transition: .3s;
 }
 
 /* ===================== Main ===================== */
@@ -190,7 +187,8 @@ body {
 }
 
 .toggle {
-   position: relative;
+   /* position: fixed; */
+   z-index: 9999;
    width: 60px;
    height: 60px;
    display: flex;
@@ -199,8 +197,6 @@ body {
    font-size: 2.5rem;
    cursor: pointer;
 }
-
-
 
 /* ======================= Cards ====================== */
 .cardBox {
@@ -225,7 +221,6 @@ body {
    cursor: pointer;
    height: 200px;
    transition: .3s ease-out;
-
 }
 
 .card-left {
@@ -244,7 +239,6 @@ body {
    cursor: pointer;
    height: 200px;
    transition: .3s ease-out;
-
 }
 
 .say,
@@ -309,7 +303,6 @@ body {
    /* box-shadow: 0px 15px 15px 0px #929292; */
    /* filter: drop-shadow(0px 10px 10px #929292); */
 }
-
 
 /* end jam */
 
@@ -454,7 +447,6 @@ body {
    }
 }
 
-
 /* ================== Order Details List ============== */
 .details {
    margin-top: -10px;
@@ -588,8 +580,6 @@ input.progres:focus {
 input.range{
    width: 100%;
 }
-
-
 
 /* ====================== Responsive Design ========================== */
 @media (max-width: 991px) {

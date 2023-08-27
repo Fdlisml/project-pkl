@@ -101,7 +101,8 @@ year.innerHTML = today.getFullYear();
 
 
 // range
-
-function rangeSlide(value) {
-   document.getElementById("rangeValue").innerHTML = value;
-}
+const rangeInput = document.querySelector(".range");
+const rangeValue = document.querySelector(".rangeValue");
+rangeInput.addEventListener('input', () => {
+   rangeValue.textContent = rangeInput.value + '%';
+});

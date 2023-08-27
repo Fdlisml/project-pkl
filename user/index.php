@@ -208,11 +208,11 @@ if ($data === null) {
                               <label for="">Progres</label><br>
                               <div class="field">
                                  <div class="range-active">
-                                    <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1" onmousemove="rangeSlide(this.value)">
+                                    <input class="range" type="range" name="progres" min="0" max="100" value="0" steps="1">
                                  </div>
 
                                  <div class="value">
-                                    <span id="rangeValue">0</span>%
+                                    <span class="rangeValue">0%</span>
                                  </div>
                               </div>
                            </div>
