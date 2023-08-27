@@ -87,10 +87,6 @@ require_once '../api/project.php';
                <div class="toggle">
                   <ion-icon name="menu-outline"></ion-icon>
                </div>
-
-               <!-- <div class="user">
-                  <img src="public/image/customer01.jpg" alt="">
-               </div> -->
             </div>
 
             <!-- ================ Order Details List ================= -->
